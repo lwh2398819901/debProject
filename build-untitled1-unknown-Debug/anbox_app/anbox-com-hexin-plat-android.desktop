@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=同花顺
+Exec=/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.hexin.plat.android --component=com.hexin.plat.android.AndroidLogoActivity 
+Terminal=false
+Type=Application
+Icon=/home/uos/.local/share/applications/anbox/anbox-com-hexin-plat-android.png

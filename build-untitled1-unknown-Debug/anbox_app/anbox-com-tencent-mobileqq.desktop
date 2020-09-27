@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=QQ
+Exec=/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.tencent.mobileqq --component=com.tencent.mobileqq.activity.SplashActivity 
+Terminal=false
+Type=Application
+Icon=/home/uos/.local/share/applications/anbox/anbox-com-tencent-mobileqq.png
