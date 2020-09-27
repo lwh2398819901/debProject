@@ -237,7 +237,7 @@ void MainWindow::readAppPackageNames()
 
 void MainWindow::writeAppPackageNames()
 {
-
+    //对比 m_apppAckageNames是否有变化，无变化不写入
 }
 
 QString MainWindow::replaceString(QString src, const ApkInfo &apk)

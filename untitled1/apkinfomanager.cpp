@@ -28,7 +28,6 @@ void ApkInfoManager::addApkInfo()
     item->addChild(item2);
     ui->treeWidget->addTopLevelItem(item);
     ui->treeWidget->setItemWidget(item2,0,w);
-
 }
 
 void ApkInfoManager::save()
@@ -38,7 +37,7 @@ void ApkInfoManager::save()
 
 void ApkInfoManager::cencle()
 {
-
+    close();
 }
 
 void ApkInfoManager::init()
@@ -52,6 +51,5 @@ void ApkInfoManager::init()
         item->addChild(item2);
         ui->treeWidget->addTopLevelItem(item);
         ui->treeWidget->setItemWidget(item2,0,w);
-
     }
 }
