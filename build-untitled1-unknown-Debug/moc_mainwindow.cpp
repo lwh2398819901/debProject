@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[11];
-    char stringdata0[140];
+    char stringdata0[181];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,23 +32,23 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 7), // "loadDir"
-QT_MOC_LITERAL(2, 19, 0), // ""
-QT_MOC_LITERAL(3, 20, 9), // "outputDir"
-QT_MOC_LITERAL(4, 30, 10), // "desktopDir"
-QT_MOC_LITERAL(5, 41, 6), // "appDir"
-QT_MOC_LITERAL(6, 48, 15), // "createDirAndDeb"
-QT_MOC_LITERAL(7, 64, 26), // "readBashStandardOutputInfo"
-QT_MOC_LITERAL(8, 91, 25), // "readBashStandardErrorInfo"
-QT_MOC_LITERAL(9, 117, 7), // "addApks"
-QT_MOC_LITERAL(10, 125, 14) // "showApkManager"
+QT_MOC_LITERAL(1, 11, 15), // "slot_loadAPKDir"
+QT_MOC_LITERAL(2, 27, 0), // ""
+QT_MOC_LITERAL(3, 28, 14), // "slot_outputDir"
+QT_MOC_LITERAL(4, 43, 15), // "slot_desktopDir"
+QT_MOC_LITERAL(5, 59, 11), // "slot_appDir"
+QT_MOC_LITERAL(6, 71, 20), // "slot_createDirAndDeb"
+QT_MOC_LITERAL(7, 92, 26), // "readBashStandardOutputInfo"
+QT_MOC_LITERAL(8, 119, 25), // "readBashStandardErrorInfo"
+QT_MOC_LITERAL(9, 145, 15), // "slot_addApkInfo"
+QT_MOC_LITERAL(10, 161, 19) // "slot_showApkManager"
 
     },
-    "MainWindow\0loadDir\0\0outputDir\0desktopDir\0"
-    "appDir\0createDirAndDeb\0"
-    "readBashStandardOutputInfo\0"
-    "readBashStandardErrorInfo\0addApks\0"
-    "showApkManager"
+    "MainWindow\0slot_loadAPKDir\0\0slot_outputDir\0"
+    "slot_desktopDir\0slot_appDir\0"
+    "slot_createDirAndDeb\0readBashStandardOutputInfo\0"
+    "readBashStandardErrorInfo\0slot_addApkInfo\0"
+    "slot_showApkManager"
 };
 #undef QT_MOC_LITERAL
 
@@ -96,15 +96,15 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         MainWindow *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->loadDir(); break;
-        case 1: _t->outputDir(); break;
-        case 2: _t->desktopDir(); break;
-        case 3: _t->appDir(); break;
-        case 4: _t->createDirAndDeb(); break;
+        case 0: _t->slot_loadAPKDir(); break;
+        case 1: _t->slot_outputDir(); break;
+        case 2: _t->slot_desktopDir(); break;
+        case 3: _t->slot_appDir(); break;
+        case 4: _t->slot_createDirAndDeb(); break;
         case 5: _t->readBashStandardOutputInfo(); break;
         case 6: _t->readBashStandardErrorInfo(); break;
-        case 7: _t->addApks(); break;
-        case 8: _t->showApkManager(); break;
+        case 7: _t->slot_addApkInfo(); break;
+        case 8: _t->slot_showApkManager(); break;
         default: ;
         }
     }

@@ -391,13 +391,17 @@ moc_predefs.h: /usr/lib/aarch64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_apkinfomanager.cpp moc_apkinfowindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp moc_apkinfomanager.cpp moc_apkinfowindow.cpp
-moc_mainwindow.cpp: ../untitled1/publisherfunc.h \
+moc_mainwindow.cpp: ../untitled1/apkinfomanager.h \
+		../untitled1/publisherfunc.h \
+		../untitled1/apkinfowindow.h \
 		../untitled1/mainwindow.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/uos/Desktop/debProject/build-untitled1-unknown-Debug/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-clang -I/home/uos/Desktop/debProject/untitled1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/8 -I/usr/include/aarch64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/include/clang/7.0.1/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include ../untitled1/mainwindow.h -o moc_mainwindow.cpp
 
-moc_apkinfomanager.cpp: ../untitled1/apkinfomanager.h \
+moc_apkinfomanager.cpp: ../untitled1/publisherfunc.h \
+		../untitled1/apkinfowindow.h \
+		../untitled1/apkinfomanager.h \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/uos/Desktop/debProject/build-untitled1-unknown-Debug/moc_predefs.h -I/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-clang -I/home/uos/Desktop/debProject/untitled1 -I/usr/include/aarch64-linux-gnu/qt5 -I/usr/include/aarch64-linux-gnu/qt5/QtWidgets -I/usr/include/aarch64-linux-gnu/qt5/QtGui -I/usr/include/aarch64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/8 -I/usr/include/aarch64-linux-gnu/c++/8 -I/usr/include/c++/8/backward -I/usr/include/clang/7.0.1/include -I/usr/local/include -I/usr/include/aarch64-linux-gnu -I/usr/include ../untitled1/apkinfomanager.h -o moc_apkinfomanager.cpp
@@ -438,11 +442,15 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 ####### Compile
 
 main.o: ../untitled1/main.cpp ../untitled1/mainwindow.h \
-		../untitled1/publisherfunc.h
+		../untitled1/apkinfomanager.h \
+		../untitled1/publisherfunc.h \
+		../untitled1/apkinfowindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../untitled1/main.cpp
 
 mainwindow.o: ../untitled1/mainwindow.cpp ../untitled1/mainwindow.h \
+		../untitled1/apkinfomanager.h \
 		../untitled1/publisherfunc.h \
+		../untitled1/apkinfowindow.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../untitled1/mainwindow.cpp
 
@@ -450,6 +458,8 @@ publisherfunc.o: ../untitled1/publisherfunc.cpp ../untitled1/publisherfunc.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o publisherfunc.o ../untitled1/publisherfunc.cpp
 
 apkinfomanager.o: ../untitled1/apkinfomanager.cpp ../untitled1/apkinfomanager.h \
+		../untitled1/publisherfunc.h \
+		../untitled1/apkinfowindow.h \
 		ui_apkinfomanager.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o apkinfomanager.o ../untitled1/apkinfomanager.cpp
 

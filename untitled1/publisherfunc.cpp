@@ -1,5 +1,6 @@
 #include "publisherfunc.h"
 
+#include <QDir>
 #include <QFile>
 
 namespace  publisherFunc{
@@ -28,6 +29,20 @@ QString readFile(const QString &filePath)
     }
     return QString();
 }
+
+QStringList getDirFileNames(const QString& dirPath,QDir::Filters flag,QStringList suffix)
+{
+    //获取加载文件夹内所有文件名
+    QDir dir(dirPath);
+    if (dir.exists())
+    {
+        dir.setFilter(flag);    //设置文件类型 文件夹 文件 软连接
+        dir.setNameFilters(suffix);//设置文件后缀
+        return dir.entryList();
+    }
+    return QStringList();
+}
+
 
 }
 
