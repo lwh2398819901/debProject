@@ -12,8 +12,11 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -36,12 +39,17 @@ public:
     QLineEdit *appIconLine;
     QLabel *label_7;
     QLineEdit *appNameLine;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
 
     void setupUi(QWidget *ApkInfoWindow)
     {
         if (ApkInfoWindow->objectName().isEmpty())
             ApkInfoWindow->setObjectName(QStringLiteral("ApkInfoWindow"));
-        ApkInfoWindow->resize(407, 361);
+        ApkInfoWindow->resize(615, 355);
         gridLayout = new QGridLayout(ApkInfoWindow);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         label = new QLabel(ApkInfoWindow);
@@ -52,7 +60,7 @@ public:
         apkNameLine = new QLineEdit(ApkInfoWindow);
         apkNameLine->setObjectName(QStringLiteral("apkNameLine"));
 
-        gridLayout->addWidget(apkNameLine, 0, 1, 1, 1);
+        gridLayout->addWidget(apkNameLine, 0, 2, 1, 1);
 
         label_2 = new QLabel(ApkInfoWindow);
         label_2->setObjectName(QStringLiteral("label_2"));
@@ -62,7 +70,7 @@ public:
         debNameLine = new QLineEdit(ApkInfoWindow);
         debNameLine->setObjectName(QStringLiteral("debNameLine"));
 
-        gridLayout->addWidget(debNameLine, 1, 1, 1, 1);
+        gridLayout->addWidget(debNameLine, 1, 2, 1, 1);
 
         label_3 = new QLabel(ApkInfoWindow);
         label_3->setObjectName(QStringLiteral("label_3"));
@@ -72,7 +80,7 @@ public:
         debVerLine = new QLineEdit(ApkInfoWindow);
         debVerLine->setObjectName(QStringLiteral("debVerLine"));
 
-        gridLayout->addWidget(debVerLine, 2, 1, 1, 1);
+        gridLayout->addWidget(debVerLine, 2, 2, 1, 1);
 
         label_4 = new QLabel(ApkInfoWindow);
         label_4->setObjectName(QStringLiteral("label_4"));
@@ -82,7 +90,7 @@ public:
         platformLine = new QLineEdit(ApkInfoWindow);
         platformLine->setObjectName(QStringLiteral("platformLine"));
 
-        gridLayout->addWidget(platformLine, 3, 1, 1, 1);
+        gridLayout->addWidget(platformLine, 3, 2, 1, 1);
 
         label_5 = new QLabel(ApkInfoWindow);
         label_5->setObjectName(QStringLiteral("label_5"));
@@ -92,7 +100,7 @@ public:
         desktopLine = new QLineEdit(ApkInfoWindow);
         desktopLine->setObjectName(QStringLiteral("desktopLine"));
 
-        gridLayout->addWidget(desktopLine, 4, 1, 1, 1);
+        gridLayout->addWidget(desktopLine, 4, 2, 1, 1);
 
         label_6 = new QLabel(ApkInfoWindow);
         label_6->setObjectName(QStringLiteral("label_6"));
@@ -102,17 +110,38 @@ public:
         appIconLine = new QLineEdit(ApkInfoWindow);
         appIconLine->setObjectName(QStringLiteral("appIconLine"));
 
-        gridLayout->addWidget(appIconLine, 5, 1, 1, 1);
+        gridLayout->addWidget(appIconLine, 5, 2, 1, 1);
 
         label_7 = new QLabel(ApkInfoWindow);
         label_7->setObjectName(QStringLiteral("label_7"));
 
-        gridLayout->addWidget(label_7, 6, 0, 1, 1);
+        gridLayout->addWidget(label_7, 6, 0, 1, 2);
 
         appNameLine = new QLineEdit(ApkInfoWindow);
         appNameLine->setObjectName(QStringLiteral("appNameLine"));
 
-        gridLayout->addWidget(appNameLine, 6, 1, 1, 1);
+        gridLayout->addWidget(appNameLine, 6, 2, 1, 1);
+
+        widget = new QWidget(ApkInfoWindow);
+        widget->setObjectName(QStringLiteral("widget"));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalSpacer = new QSpacerItem(458, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
+        pushButton = new QPushButton(widget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+
+        horizontalLayout->addWidget(pushButton);
+
+        pushButton_2 = new QPushButton(widget);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+
+        horizontalLayout->addWidget(pushButton_2);
+
+
+        gridLayout->addWidget(widget, 7, 0, 1, 3);
 
 
         retranslateUi(ApkInfoWindow);
@@ -130,6 +159,8 @@ public:
         label_5->setText(QApplication::translate("ApkInfoWindow", "app\345\233\276\346\240\207\357\274\232", nullptr));
         label_6->setText(QApplication::translate("ApkInfoWindow", "app\345\233\276\347\211\207\357\274\232", nullptr));
         label_7->setText(QApplication::translate("ApkInfoWindow", "abdroid\345\272\224\347\224\250\345\220\215\347\247\260\357\274\232", nullptr));
+        pushButton->setText(QApplication::translate("ApkInfoWindow", "\344\277\235\345\255\230", nullptr));
+        pushButton_2->setText(QApplication::translate("ApkInfoWindow", "\345\217\226\346\266\210", nullptr));
     } // retranslateUi
 
 };

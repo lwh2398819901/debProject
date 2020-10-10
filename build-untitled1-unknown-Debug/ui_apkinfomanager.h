@@ -28,14 +28,12 @@ public:
     QGridLayout *gridLayout;
     QHBoxLayout *horizontalLayout_2;
     QLineEdit *lineEdit;
-    QPushButton *pushButton;
     QTreeWidget *treeWidget;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QPushButton *saveBtn;
     QPushButton *addBtn;
-    QPushButton *cancelBtn;
-    QPushButton *pushButton_2;
+    QPushButton *deleteBtn;
 
     void setupUi(QWidget *ApkInfoManager)
     {
@@ -51,15 +49,13 @@ public:
 
         horizontalLayout_2->addWidget(lineEdit);
 
-        pushButton = new QPushButton(ApkInfoManager);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-
-        horizontalLayout_2->addWidget(pushButton);
-
 
         gridLayout->addLayout(horizontalLayout_2, 0, 0, 1, 1);
 
         treeWidget = new QTreeWidget(ApkInfoManager);
+        QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem();
+        __qtreewidgetitem->setText(0, QStringLiteral("1"));
+        treeWidget->setHeaderItem(__qtreewidgetitem);
         treeWidget->setObjectName(QStringLiteral("treeWidget"));
 
         gridLayout->addWidget(treeWidget, 1, 0, 1, 1);
@@ -80,15 +76,10 @@ public:
 
         horizontalLayout->addWidget(addBtn);
 
-        cancelBtn = new QPushButton(ApkInfoManager);
-        cancelBtn->setObjectName(QStringLiteral("cancelBtn"));
+        deleteBtn = new QPushButton(ApkInfoManager);
+        deleteBtn->setObjectName(QStringLiteral("deleteBtn"));
 
-        horizontalLayout->addWidget(cancelBtn);
-
-        pushButton_2 = new QPushButton(ApkInfoManager);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-
-        horizontalLayout->addWidget(pushButton_2);
+        horizontalLayout->addWidget(deleteBtn);
 
 
         gridLayout->addLayout(horizontalLayout, 2, 0, 1, 1);
@@ -102,11 +93,9 @@ public:
     void retranslateUi(QWidget *ApkInfoManager)
     {
         ApkInfoManager->setWindowTitle(QApplication::translate("ApkInfoManager", "Form", nullptr));
-        pushButton->setText(QApplication::translate("ApkInfoManager", "\346\237\245\346\211\276", nullptr));
         saveBtn->setText(QApplication::translate("ApkInfoManager", "\344\277\235\345\255\230", nullptr));
         addBtn->setText(QApplication::translate("ApkInfoManager", "\346\267\273\345\212\240", nullptr));
-        cancelBtn->setText(QApplication::translate("ApkInfoManager", "\345\217\226\346\266\210", nullptr));
-        pushButton_2->setText(QApplication::translate("ApkInfoManager", "\345\210\240\351\231\244", nullptr));
+        deleteBtn->setText(QApplication::translate("ApkInfoManager", "\345\210\240\351\231\244", nullptr));
     } // retranslateUi
 
 };

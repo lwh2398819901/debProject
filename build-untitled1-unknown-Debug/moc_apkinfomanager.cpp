@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_ApkInfoManager_t {
     QByteArrayData data[5];
-    char stringdata0[39];
+    char stringdata0[56];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,13 +32,14 @@ struct qt_meta_stringdata_ApkInfoManager_t {
 static const qt_meta_stringdata_ApkInfoManager_t qt_meta_stringdata_ApkInfoManager = {
     {
 QT_MOC_LITERAL(0, 0, 14), // "ApkInfoManager"
-QT_MOC_LITERAL(1, 15, 10), // "addApkInfo"
-QT_MOC_LITERAL(2, 26, 0), // ""
-QT_MOC_LITERAL(3, 27, 4), // "save"
-QT_MOC_LITERAL(4, 32, 6) // "cencle"
+QT_MOC_LITERAL(1, 15, 11), // "slot_addApk"
+QT_MOC_LITERAL(2, 27, 0), // ""
+QT_MOC_LITERAL(3, 28, 12), // "slot_saveApk"
+QT_MOC_LITERAL(4, 41, 14) // "slot_deleteApk"
 
     },
-    "ApkInfoManager\0addApkInfo\0\0save\0cencle"
+    "ApkInfoManager\0slot_addApk\0\0slot_saveApk\0"
+    "slot_deleteApk"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,9 +57,9 @@ static const uint qt_meta_data_ApkInfoManager[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x08 /* Private */,
-       3,    0,   30,    2, 0x08 /* Private */,
-       4,    0,   31,    2, 0x08 /* Private */,
+       1,    0,   29,    2, 0x0a /* Public */,
+       3,    0,   30,    2, 0x0a /* Public */,
+       4,    0,   31,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -74,9 +75,9 @@ void ApkInfoManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         ApkInfoManager *_t = static_cast<ApkInfoManager *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->addApkInfo(); break;
-        case 1: _t->save(); break;
-        case 2: _t->cencle(); break;
+        case 0: _t->slot_addApk(); break;
+        case 1: _t->slot_saveApk(); break;
+        case 2: _t->slot_deleteApk(); break;
         default: ;
         }
     }

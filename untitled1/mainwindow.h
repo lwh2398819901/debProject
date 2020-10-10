@@ -4,9 +4,9 @@
 #include <QLineEdit>
 #include <QMainWindow>
 #include <QProcess>
-#include <QDialog>
 #include "apkinfomanager.h"
 #include "publisherfunc.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -44,6 +44,10 @@ private:
     //读写配置文件
     void readConfig();
     void writeConfig();
+
+    void addApkInfo(QString filePath);
+signals:
+    void sig_updateAppInfo();
 private:
     Ui::MainWindow *ui;
     QString m_loadDir;
@@ -51,14 +55,15 @@ private:
     QString m_desktopDir;
     QString m_apkDir;
     QString m_addApksDir;
-    QProcess* m_proces_bash;
+    QProcess* m_proces_bash {nullptr};
     QMap<QString,ApkInfo>m_apppAckageNames;
+    QMap<QString,ApkInfo>m_old_apppAckageNames;
 
     QString model_control;
     QString model_postinst;
     QString model_prerm;
 
-    ApkInfoManager* m_apkManager;
+    ApkInfoManager* m_apkManager{nullptr};
 };
 
 

@@ -1,13 +1,25 @@
 #include "apkinfowindow.h"
 #include "ui_apkinfowindow.h"
 
-ApkInfoWindow::ApkInfoWindow(ApkInfo*const _apk,QWidget *parent) :
+ApkInfoWindow::ApkInfoWindow(ApkInfo*const _apk,QWidget *parent,bool showSave) :
     QWidget(parent),
     ui(new Ui::ApkInfoWindow),
     apk(_apk)
 {
     ui->setupUi(this);
+    if(showSave)
+    {
+       setAttribute(Qt::WA_ShowModal, true);
+        ui->widget->show();
+    }
+    else
+    {
+        ui->widget->hide();
+    }
+    setAttribute(Qt::WA_DeleteOnClose);
     init();
+    connect(ui->pushButton,&QPushButton::clicked,this,&ApkInfoWindow::slot_writeApkInfo);
+    connect(ui->pushButton_2,&QPushButton::clicked,this,&ApkInfoWindow::slot_cancel);
 }
 
 ApkInfoWindow::~ApkInfoWindow()
@@ -15,7 +27,7 @@ ApkInfoWindow::~ApkInfoWindow()
     delete ui;
 }
 
-void ApkInfoWindow::writeApkInfo()
+void ApkInfoWindow::slot_writeApkInfo()
 {
     if(apk)
     {
@@ -27,6 +39,14 @@ void ApkInfoWindow::writeApkInfo()
         apk->appIcon=ui->appIconLine->text();
         apk->androidName=ui->appNameLine->text();
     }
+    emit sig_save();
+    close();
+}
+
+void ApkInfoWindow::slot_cancel()
+{
+    emit sig_cancel();
+    close();
 }
 
 void ApkInfoWindow::init()

@@ -13,9 +13,14 @@ class ApkInfoWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit ApkInfoWindow(ApkInfo*const _apk,QWidget *parent = nullptr);
+    explicit ApkInfoWindow(ApkInfo*const _apk,QWidget *parent = nullptr,bool showSave=false);
     ~ApkInfoWindow();
-    void writeApkInfo();
+    void slot_writeApkInfo();
+    void slot_cancel();
+
+signals:
+    void sig_save();
+    void sig_cancel();
 private:
     void init();
 private:

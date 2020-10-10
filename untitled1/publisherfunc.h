@@ -21,6 +21,37 @@ struct ApkInfo
     QString appIcon;
     QString androidName;
 
+    ApkInfo()
+    {
+
+    }
+
+    ApkInfo(const ApkInfo &apk)
+    {
+        apkName   =apk.apkName;
+        debName   =apk.debName;
+        debVersion=apk.debVersion;
+        platform  =apk.platform;
+        appDesktop=apk.appDesktop;
+        appIcon   =apk.appIcon;
+        androidName=apk.androidName;
+    }
+
+    bool operator!=(const ApkInfo &apk)const
+    {
+        return  apkName   !=apk.apkName||
+                debName   !=apk.debName||
+                debVersion!=apk.debVersion||
+                platform  !=apk.platform||
+                appDesktop!=apk.appDesktop||
+                appIcon   !=apk.appIcon||
+                androidName!=apk.androidName;
+    }
+    bool operator==(const ApkInfo &apk)const
+    {
+        return !(*this!=apk);
+    }
+
 };
 
 #endif // PUBLISHERFUNC_H

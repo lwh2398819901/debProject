@@ -1,23 +1,21 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QFileDialog>
-#include <QDebug>
-#include <QDir>
-#include <QProcess>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include "publisherfunc.h"
-
+#include <QDir>
+#include <QDebug>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QSettings>
 #include <QJsonDocument>
 #include <QJsonParseError>
 #include <QJsonObject>
 #include <QJsonArray>
-#include <QMessageBox>
-#include <QSettings>
 
 using namespace publisherFunc;
 
 #define SHELLSCRICPT "/usr/bin/anbox-appmgr-demo.sh"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -29,7 +27,6 @@ MainWindow::MainWindow(QWidget *parent) :
     //读取配置文件
     readConfig();
 
-    m_apkManager=NULL;
     //外部命令调用及信号连接
     m_proces_bash = new QProcess;
     m_proces_bash->start("bash");
@@ -54,6 +51,8 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     writeConfig();
+    writeAppPackageNames();
+    delete m_apkManager;
     delete ui;
 }
 /********************************deb槽函数*************************************/
@@ -87,7 +86,7 @@ void MainWindow::slot_createDirAndDeb()
     //执行
     if(m_loadDir.isEmpty()||m_outputDir.isEmpty()||m_desktopDir.isEmpty()||m_apkDir.isEmpty())
     {
-        QMessageBox::warning(NULL,"错误","目录不能为空");
+        QMessageBox::warning(nullptr,"错误","目录不能为空");
         return ;
     }
     bool debFlag = ui->checkBox->checkState()==Qt::CheckState::Checked;
@@ -135,7 +134,7 @@ void MainWindow::slot_createDirAndDeb()
         }
         else {
            //弹出错误提示
-           QMessageBox::warning(NULL,"错误",QString("error:%1 属性查找不存在  跳过该deb创建").arg(appName));
+           QMessageBox::warning(nullptr,"错误",QString("error:%1 属性查找不存在  跳过该deb创建").arg(appName));
         }
     }
 }
@@ -167,13 +166,12 @@ void MainWindow::iconChanged(const ApkInfo &apk, const QString filePath)
 {
     QStringList list =readFile(filePath).split("\n");
     QString text;
-    for(QStringList::iterator str = list.begin();str!=list.end();++str)
+    foreach(const QString &str, list)
     {
-        if((*str).startsWith("Icon="))
+        if(str.startsWith("Icon="))
             text += "Icon="+this->m_desktopDir+"/"+apk.appIcon;
         else
-            text += (*str+"\n");
-
+            text += (str+"\n");
     }
     createFile(filePath,text);
 }
@@ -194,7 +192,7 @@ void MainWindow::readAppPackageNames()
 
     if(json_error.error != QJsonParseError::NoError)
     {
-        QMessageBox::warning(NULL,"错误","读取android_app.json文件失败,程序退出");
+        QMessageBox::warning(nullptr,"错误","读取android_app.json文件失败,程序退出");
         exit(1);
     }
 
@@ -214,6 +212,7 @@ void MainWindow::readAppPackageNames()
             apk.appIcon=obj.value("appIcon").toString();
             apk.androidName=obj.value("androidName").toString();
             m_apppAckageNames.insert(key,apk);
+            m_old_apppAckageNames.insert(key,apk);
         }
     }
 }
@@ -221,6 +220,49 @@ void MainWindow::readAppPackageNames()
 void MainWindow::writeAppPackageNames()
 {
     //对比 m_apppAckageNames是否有变化，无变化不写入
+    bool changed=false;
+
+    if(m_apppAckageNames.size()!=m_old_apppAckageNames.size())
+    {
+        changed=true;
+    }
+    else {
+       foreach(QString key,m_apppAckageNames.keys())
+       {
+           auto it = m_old_apppAckageNames.find(key);
+           if(it==m_old_apppAckageNames.end())
+           {
+               changed=true;
+               break;
+           }
+           else {
+               if(*it!=m_apppAckageNames.value(key))
+               {
+                   changed=true;
+                   break;
+               }
+           }
+       }
+    }
+
+    if(!changed)
+        return ;
+    QJsonObject rootObj;
+    foreach(QString key,m_apppAckageNames.keys())
+    {
+        QJsonObject info;
+        ApkInfo apk = m_apppAckageNames.value(key);
+        info.insert("debName",apk.debName);
+        info.insert("debVersion",apk.debVersion);
+        info.insert("platform",apk.platform);
+        info.insert("appDesktop",apk.appDesktop);
+        info.insert("appIcon",apk.appIcon);
+        info.insert("androidName",apk.androidName);
+        rootObj.insert(key,info);
+    }
+
+    QJsonDocument doc(rootObj);
+    createFile("./android_app.json",doc.toJson());
 }
 
 
@@ -229,16 +271,21 @@ void MainWindow::writeAppPackageNames()
 //添加apkinfo
 void MainWindow::slot_addApkInfo()
 {
-    getDirPath(ui->addApksLine);
-
-    //弹出apk添加窗口
-
+    QString filepath = QFileDialog::getOpenFileName(nullptr,"","","*.apk");
+    if(!filepath.isEmpty())
+    {
+        addApkInfo(filepath);
+    }
 }
 
 void MainWindow::slot_showApkManager()
 {
-    if(!m_apkManager)
-        m_apkManager =new ApkInfoManager(&m_apppAckageNames,NULL);
+    if(m_apkManager==nullptr)
+    {
+        m_apkManager =new ApkInfoManager(&m_apppAckageNames,nullptr);
+        connect(this,&MainWindow::sig_updateAppInfo,m_apkManager,&ApkInfoManager::init);
+    }
+    emit sig_updateAppInfo();
     m_apkManager->show();
 }
 
@@ -279,6 +326,39 @@ void MainWindow::writeConfig()
     configIni.setValue( "settings/desktoLine" ,ui->desktoLine->text());
     configIni.setValue( "settings/apkDirLine" ,ui->apkDirLine->text());
     configIni.setValue( "settings/iconCheckBox" ,ui->iconCheckBox->checkState()==Qt::CheckState::Checked);
+}
+
+void MainWindow::addApkInfo(QString filePath)
+{
+    ui->addApksLine->setText(filePath);
+    QFileInfo fileINfo(filePath);
+
+    QString apkName = fileINfo.fileName();
+    ApkInfo *apk;
+    auto it = m_apppAckageNames.find(apkName);
+    if(it!=m_apppAckageNames.end())
+    {
+        apk = new ApkInfo(it.value());
+    }
+    else {
+        apk = new ApkInfo();
+        apk->apkName = apkName;
+        apk->platform ="all";
+    }
+
+    ApkInfoWindow*w =new ApkInfoWindow(apk,nullptr,true);
+    connect(w,&ApkInfoWindow::sig_save,[=](){
+        m_apppAckageNames.insert(apk->apkName,*apk);
+        emit sig_updateAppInfo();
+        delete apk;
+        ui->addApksLine->setText("");
+    });
+    connect(w,&ApkInfoWindow::sig_cancel,[=](){
+        delete apk;
+        ui->addApksLine->setText("");
+    });
+
+    w->show();
 }
 
 

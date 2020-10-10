@@ -19,17 +19,16 @@
      <item>
       <widget class="QLineEdit" name="lineEdit"/>
      </item>
-     <item>
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>查找</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </item>
    <item row="1" column="0">
-    <widget class="QTreeWidget" name="treeWidget"/>
+    <widget class="QTreeWidget" name="treeWidget">
+     <column>
+      <property name="text">
+       <string notr="true">1</string>
+      </property>
+     </column>
+    </widget>
    </item>
    <item row="2" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -61,14 +60,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="cancelBtn">
-       <property name="text">
-        <string>取消</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="deleteBtn">
        <property name="text">
         <string>删除</string>
        </property>

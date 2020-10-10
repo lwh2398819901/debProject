@@ -19,12 +19,11 @@ class ApkInfoManager : public QWidget
 public:
     explicit ApkInfoManager(QMap<QString,ApkInfo>*const apkinfoList,QWidget *parent = nullptr);
     ~ApkInfoManager();
-private slots:
-    void addApkInfo();
-    void save();
-    void cencle();
-private:
     void init();
+public slots:
+    void slot_addApk();
+    void slot_saveApk();
+    void slot_deleteApk();
 
 private:
     Ui::ApkInfoManager *ui;
