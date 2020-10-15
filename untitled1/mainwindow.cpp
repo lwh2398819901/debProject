@@ -211,7 +211,7 @@ void MainWindow::iconChanged(const ApkInfo &apk, const QString filePath)
     foreach(const QString &str, list)
     {
         if(str.startsWith("Icon="))
-            text += "Icon="+this->m_desktopDir+"/"+apk.appIcon;
+            text += "Icon="+this->m_desktopDir+"/"+apk.appIcon+"\n";
         else
             text += (str+"\n");
     }
