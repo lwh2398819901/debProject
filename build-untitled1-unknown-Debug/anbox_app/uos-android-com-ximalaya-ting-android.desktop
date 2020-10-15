@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=喜马拉雅
+Exec=/usr/bin/deepin-androidbox-launch.sh --action=android.intent.action.MAIN --package=com.ximalaya.ting.android --component=com.ximalaya.ting.android.host.activity.WelComeActivity 
+Terminal=false
+Type=Application
+Icon=/home/uos/.local/share/applications/anbox/anbox-com-ximalaya-ting-android.png

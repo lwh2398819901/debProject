@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <QDir>
 #include <QDebug>
 #include <QFileDialog>
 #include <QMessageBox>
@@ -11,22 +10,20 @@
 #include <QJsonParseError>
 #include <QJsonObject>
 #include <QJsonArray>
+#include "apkinfowindow.h"
 
 using namespace publisherFunc;
 
-#define SHELLSCRICPT "/usr/bin/anbox-appmgr-demo.sh"
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    isAddApk(false)
 {
     ui->setupUi(this);
-
     //获取apk属性
     readAppPackageNames();
     //读取配置文件
     readConfig();
-
     //外部命令调用及信号连接
     m_proces_bash = new QProcess;
     m_proces_bash->start("bash");
@@ -45,14 +42,17 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->apkDirBtn,&QPushButton::clicked,this,&MainWindow::slot_appDir);
     connect(ui->addApksBtn,&QPushButton::clicked,this,&MainWindow::slot_addApkInfo);
     connect(ui->actionBtn,&QPushButton::clicked,this,&MainWindow::slot_createDirAndDeb);
-    connect(ui->apkManagerBtn,&QPushButton::clicked,this,&MainWindow::slot_showApkManager);
+    connect(ui->editApkBtn,&QPushButton::clicked,[=](){
+        QMessageBox::warning(nullptr,"警告","修改此文件可能会造成错误，建议修改后重启软件");
+        QProcess().startDetached("deepin-editor ./android_app.json");
+    });
+    ui->tabWidget->setCurrentIndex(0);
 }
 
 MainWindow::~MainWindow()
 {
     writeConfig();
     writeAppPackageNames();
-    delete m_apkManager;
     delete ui;
 }
 /********************************deb槽函数*************************************/
@@ -106,19 +106,61 @@ void MainWindow::slot_createDirAndDeb()
             QString optDir=appDir+m_apkDir+"/";
             QString desktopDir=appDir+m_desktopDir+"/";
 
-            dir.mkpath(DebianDir); //递归创建目录结构，appdir目录通过递归创建出来
-            dir.mkpath(optDir);
-            dir.mkpath(desktopDir);
+            bool flag1=dir.mkpath(DebianDir); //递归创建目录结构，appdir目录通过递归创建出来
+            bool flag2=dir.mkpath(optDir);
+            bool flag3=dir.mkpath(desktopDir);
+
+            if(!flag1||!flag2||!flag3)
+            {
+                QString str;
+                if(!flag1)
+                    str += "debianDir\t";
+                if(!flag2)
+                    str += "optDir\t";
+                if(!flag3)
+                    str += "desktopDir\t";
+                str+= "目录创建失败";
+                QMessageBox::warning(nullptr,"错误",str);
+                return ;
+            }
 
             //拷贝文件 app icon desktop
-            QFile::copy(m_loadDir+"/"+appName,optDir+appName);
-            QFile::copy("./anbox_app/"+apk.appIcon,desktopDir+apk.appIcon);
-            QFile::copy("./anbox_app/"+apk.appDesktop,desktopDir+apk.appDesktop);
+            flag1=QFile::copy(m_loadDir+"/"+appName,optDir+appName);
+            flag2=QFile::copy("./anbox_app/"+apk.appIcon,desktopDir+apk.appIcon);
+            flag3=QFile::copy("./anbox_app/"+apk.appDesktop,desktopDir+apk.appDesktop);
+
+            if(!flag1||!flag2||!flag3)
+            {
+                QString str;
+                if(!flag1)
+                    str += "app\t";
+                if(!flag2)
+                    str += "icon\t";
+                if(!flag3)
+                    str += "desktop\t";
+                str+= "文件拷贝失败";
+                QMessageBox::warning(nullptr,"错误",str);
+                return ;
+            }
 
             //创建control postinst prer
-            createFile(DebianDir+"control",replaceString(model_control,apk));
-            createFile(DebianDir+"postinst",replaceString(model_postinst,apk));
-            createFile(DebianDir+"prerm",replaceString(model_prerm,apk));
+            flag1=createFile(DebianDir+"control",replaceString(model_control,apk));
+            flag2=createFile(DebianDir+"postinst",replaceString(model_postinst,apk));
+            flag3=createFile(DebianDir+"prerm",replaceString(model_prerm,apk));
+
+            if(!flag1||!flag2||!flag3)
+            {
+                QString str;
+                if(!flag1)
+                    str += "control\t";
+                if(!flag2)
+                    str += "postinst\t";
+                if(!flag3)
+                    str += "prerm\t";
+                str+= "模板文件创建失败";
+                QMessageBox::warning(nullptr,"错误",str);
+                return ;
+            }
 
             //更改权限0755
             chmod((DebianDir+"control").toLocal8Bit().data(),0755);
@@ -212,42 +254,17 @@ void MainWindow::readAppPackageNames()
             apk.appIcon=obj.value("appIcon").toString();
             apk.androidName=obj.value("androidName").toString();
             m_apppAckageNames.insert(key,apk);
-            m_old_apppAckageNames.insert(key,apk);
         }
     }
 }
 //写入apkinfo
 void MainWindow::writeAppPackageNames()
 {
-    //对比 m_apppAckageNames是否有变化，无变化不写入
-    bool changed=false;
-
-    if(m_apppAckageNames.size()!=m_old_apppAckageNames.size())
-    {
-        changed=true;
-    }
-    else {
-       foreach(QString key,m_apppAckageNames.keys())
-       {
-           auto it = m_old_apppAckageNames.find(key);
-           if(it==m_old_apppAckageNames.end())
-           {
-               changed=true;
-               break;
-           }
-           else {
-               if(*it!=m_apppAckageNames.value(key))
-               {
-                   changed=true;
-                   break;
-               }
-           }
-       }
-    }
-
-    if(!changed)
+    if(!isAddApk)
         return ;
+
     QJsonObject rootObj;
+
     foreach(QString key,m_apppAckageNames.keys())
     {
         QJsonObject info;
@@ -263,9 +280,8 @@ void MainWindow::writeAppPackageNames()
 
     QJsonDocument doc(rootObj);
     createFile("./android_app.json",doc.toJson());
+    isAddApk=false;
 }
-
-
 
 /********************************apkinfo管理*************************************/
 //添加apkinfo
@@ -278,16 +294,35 @@ void MainWindow::slot_addApkInfo()
     }
 }
 
-void MainWindow::slot_showApkManager()
+void MainWindow::addApkInfo(QString filePath)
 {
-    if(m_apkManager==nullptr)
+    QFileInfo fileINfo(filePath);
+    ApkInfo *apk;
+    auto it = m_apppAckageNames.find(fileINfo.fileName());
+    if(it!=m_apppAckageNames.end())
     {
-        m_apkManager =new ApkInfoManager(&m_apppAckageNames,nullptr);
-        connect(this,&MainWindow::sig_updateAppInfo,m_apkManager,&ApkInfoManager::init);
+        apk = new ApkInfo(it.value());
     }
-    emit sig_updateAppInfo();
-    m_apkManager->show();
+    else {
+        apk = new ApkInfo();
+        apk->apkName = fileINfo.fileName();
+        apk->platform ="all";
+    }
+
+    ApkInfoWindow*w =new ApkInfoWindow(apk,nullptr);
+    connect(w,&ApkInfoWindow::sig_save,[=](){
+        m_apppAckageNames.insert(apk->apkName,*apk);
+        delete apk;
+        isAddApk=true;
+        writeAppPackageNames();
+    });
+    connect(w,&ApkInfoWindow::sig_cancel,[=](){
+        delete apk;
+    });
+
+    w->show();
 }
+
 
 /********************************外部程序输出*************************************/
 //标准输出
@@ -328,38 +363,6 @@ void MainWindow::writeConfig()
     configIni.setValue( "settings/iconCheckBox" ,ui->iconCheckBox->checkState()==Qt::CheckState::Checked);
 }
 
-void MainWindow::addApkInfo(QString filePath)
-{
-    ui->addApksLine->setText(filePath);
-    QFileInfo fileINfo(filePath);
-
-    QString apkName = fileINfo.fileName();
-    ApkInfo *apk;
-    auto it = m_apppAckageNames.find(apkName);
-    if(it!=m_apppAckageNames.end())
-    {
-        apk = new ApkInfo(it.value());
-    }
-    else {
-        apk = new ApkInfo();
-        apk->apkName = apkName;
-        apk->platform ="all";
-    }
-
-    ApkInfoWindow*w =new ApkInfoWindow(apk,nullptr,true);
-    connect(w,&ApkInfoWindow::sig_save,[=](){
-        m_apppAckageNames.insert(apk->apkName,*apk);
-        emit sig_updateAppInfo();
-        delete apk;
-        ui->addApksLine->setText("");
-    });
-    connect(w,&ApkInfoWindow::sig_cancel,[=](){
-        delete apk;
-        ui->addApksLine->setText("");
-    });
-
-    w->show();
-}
 
 
 

@@ -1,0 +1,13 @@
+#! /bin/bash
+
+#调用脚本 安装apk
+(. /usr/bin/anbox-appmgr-demo.sh install -r  #apkDir#/#apkName#)
+
+res=$?
+
+#判断是否残留apk 删除残留
+if [ -e  #apkDir#/#apkName# ] ;then
+   rm -rf  #apkDir#/#apkName#
+fi
+
+exit "$res"

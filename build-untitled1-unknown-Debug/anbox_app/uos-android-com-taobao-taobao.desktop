@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=手机淘宝
+Exec=/usr/bin/deepin-androidbox-launch.sh --action=android.intent.action.MAIN --package=com.taobao.taobao --component=com.taobao.tao.welcome.Welcome 
+Terminal=false
+Type=Application
+Icon=/home/uos/.local/share/applications/anbox/anbox-com-taobao-taobao.png

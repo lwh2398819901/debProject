@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=知乎
+Exec=/usr/bin/deepin-androidbox-launch.sh --action=android.intent.action.MAIN --package=com.zhihu.android --component=com.zhihu.android.app.ui.activity.LauncherActivity 
+Terminal=false
+Type=Application
+Icon=/home/uos/.local/share/applications/anbox/anbox-com-zhihu-android.png

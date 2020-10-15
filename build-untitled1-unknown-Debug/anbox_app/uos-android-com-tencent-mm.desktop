@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=微信
+Exec=/usr/bin/deepin-androidbox-launch.sh --action=android.intent.action.MAIN --package=com.tencent.mm --component=com.tencent.mm.ui.LauncherUI 
+Terminal=false
+Type=Application
+Icon=/home/uos/.local/share/applications/anbox/anbox-com-tencent-mm.png

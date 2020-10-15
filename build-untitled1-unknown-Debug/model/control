@@ -1,10 +1,11 @@
 Package: #debName#
 Version: #debVersion#
 Architecture: #platform#
-Maintainer: liu wh
+Maintainer: Uniontechos THIRD Maintainers <uniontechos-third@uniontech.com>
 Recommends:
 Suggests:
 Section: devel
 Priority: optional
 Multi-Arch: foreign
-Description: #apkName# install
+Description: #apkName# android_app install
+homepage: www.uniontech.com

@@ -53,14 +53,11 @@ public:
     QLineEdit *apkDirLine;
     QPushButton *apkDirBtn;
     QHBoxLayout *horizontalLayout_7;
-    QLineEdit *addApksLine;
     QPushButton *addApksBtn;
+    QPushButton *editApkBtn;
     QHBoxLayout *horizontalLayout_5;
     QSpacerItem *horizontalSpacer_2;
     QCheckBox *iconCheckBox;
-    QHBoxLayout *horizontalLayout_8;
-    QSpacerItem *horizontalSpacer_3;
-    QPushButton *apkManagerBtn;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -184,15 +181,15 @@ public:
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setSpacing(6);
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        addApksLine = new QLineEdit(tab_2);
-        addApksLine->setObjectName(QStringLiteral("addApksLine"));
-
-        horizontalLayout_7->addWidget(addApksLine);
-
         addApksBtn = new QPushButton(tab_2);
         addApksBtn->setObjectName(QStringLiteral("addApksBtn"));
 
         horizontalLayout_7->addWidget(addApksBtn);
+
+        editApkBtn = new QPushButton(tab_2);
+        editApkBtn->setObjectName(QStringLiteral("editApkBtn"));
+
+        horizontalLayout_7->addWidget(editApkBtn);
 
 
         verticalLayout_2->addLayout(horizontalLayout_7);
@@ -213,21 +210,6 @@ public:
 
 
         verticalLayout_2->addLayout(horizontalLayout_5);
-
-        horizontalLayout_8 = new QHBoxLayout();
-        horizontalLayout_8->setSpacing(6);
-        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_8->addItem(horizontalSpacer_3);
-
-        apkManagerBtn = new QPushButton(tab_2);
-        apkManagerBtn->setObjectName(QStringLiteral("apkManagerBtn"));
-
-        horizontalLayout_8->addWidget(apkManagerBtn);
-
-
-        verticalLayout_2->addLayout(horizontalLayout_8);
 
         tabWidget->addTab(tab_2, QString());
 
@@ -261,8 +243,8 @@ public:
         apkDirLine->setText(QString());
         apkDirBtn->setText(QApplication::translate("MainWindow", "\345\272\224\347\224\250\347\233\256\345\275\225", nullptr));
         addApksBtn->setText(QApplication::translate("MainWindow", "\346\267\273\345\212\240apk", nullptr));
+        editApkBtn->setText(QApplication::translate("MainWindow", "\346\237\245\347\234\213apk\351\205\215\347\275\256\346\226\207\344\273\266", nullptr));
         iconCheckBox->setText(QApplication::translate("MainWindow", "\344\277\256\346\224\271icon", nullptr));
-        apkManagerBtn->setText(QApplication::translate("MainWindow", "apk\345\261\236\346\200\247\347\256\241\347\220\206", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "\350\256\276\347\275\256", nullptr));
     } // retranslateUi
 

@@ -1,204 +1,202 @@
 {
-    "dingding_v5.1.5.apk":
-    {
-    "debName":"dingding",
-    "debVersion":"5.1.5",
-    "platform":"all",
-    "appDesktop":"anbox-com-alibaba-android-rimet.desktop",
-    "appIcon":"anbox-com-alibaba-android-rimet.png",
-    "androidName":"com.alibaba.android.rimet"
+    "Androidqq_8.4.8.4810_537065343.apk": {
+        "androidName": "com.tencent.mobileqq",
+        "appDesktop": "uos-android-com-tencent-mobileqq.desktop",
+        "appIcon": "uos-android-com-tencent-mobileqq.png",
+        "debName": "qq",
+        "debVersion": "8.4.8.4810-537065343",
+        "platform": "all"
     },
-
-    "ditiepaoku_v3.09.apk":
-    {
-    "debName":"ditiepaoku",
-    "debVersion":"3.09",
-    "platform":"all",
-    "appDesktop":"anbox-com-kiloo-subwaysurf.desktop",
-    "appIcon":"anbox-com-kiloo-subwaysurf.png",
-    "androidName":"com.kiloo.subwaysurf"
+    "TencentVideo_V8.2.28.21361_848.apk": {
+        "androidName": "com.tencent.qqlive",
+        "appDesktop": "uos-android-com-tencent-qqlive.desktop",
+        "appIcon": "uos-android-com-tencent-qqlive.png",
+        "debName": "TencentVideo",
+        "debVersion": "8.2.28.21361-848",
+        "platform": "all"
     },
-
-    "douban_v6.40.apk":
-    {
-    "debName":"douban",
-    "debVersion":"6.40",
-    "platform":"all",
-    "appDesktop":"anbox-com-douban-frodo.desktop",
-    "appIcon":"anbox-com-douban-frodo.png",
-    "androidName":"com.douban.frodo"
+    "com.douban.frodo_douban_6.44.0_196.apk": {
+        "androidName": "com.douban.frodo",
+        "appDesktop": "uos-android-com-douban-frodo.desktop",
+        "appIcon": "uos-android-com-douban-frodo.png",
+        "debName": "douban",
+        "debVersion": "6.44.0-196",
+        "platform": "all"
     },
-
-    "douyin_v11.3.0.apk":
-    {
-    "debName":"douyin",
-    "debVersion":"11.3.0",
-    "platform":"all",
-    "appDesktop":"anbox-com-ss-android-ugc-aweme.desktop",
-    "appIcon":"anbox-com-ss-android-ugc-aweme.png",
-    "androidName":"com.ss.android.ugc.aweme"
+    "dingding_v5.1.5.apk": {
+        "androidName": "com.alibaba.android.rimet",
+        "appDesktop": "uos-android-com-alibaba-android-rimet.desktop",
+        "appIcon": "uos-android-com-alibaba-android-rimet.png",
+        "debName": "dingding",
+        "debVersion": "5.1.5",
+        "platform": "all"
     },
-
-    "iqiyi_hd_v7.9.2.apk":
-    {
-    "debName":"iqiyi-hd",
-    "debVersion":"7.9.2",
-    "platform":"all",
-    "appDesktop":"anbox-com-qiyi-video-pad.desktop",
-    "appIcon":"anbox-com-qiyi-video-pad.png",
-    "androidName":"com.qiyi.video.pad"
+    "ditiepaoku_v3.09.apk": {
+        "androidName": "com.kiloo.subwaysurf",
+        "appDesktop": "uos-android-com-kiloo-subwaysurf.desktop",
+        "appIcon": "uos-android-com-kiloo-subwaysurf.png",
+        "debName": "ditiepaoku",
+        "debVersion": "3.09",
+        "platform": "all"
     },
-
-    "jinritoutiao_v7.8.1.apk":
-    {
-    "debName":"jinritoutiao",
-    "debVersion":"7.8.1",
-    "platform":"all",
-    "appDesktop":"anbox-com-ss-android-article-news.desktop",
-    "appIcon":"anbox-com-ss-android-article-news.png",
-    "androidName":"com.ss.android.article.news"
+    "douban_v6.40.apk": {
+        "androidName": "com.douban.frodo",
+        "appDesktop": "uos-android-com-douban-frodo.desktop",
+        "appIcon": "uos-android-com-douban-frodo.png",
+        "debName": "douban",
+        "debVersion": "6.40",
+        "platform": "all"
     },
-
-    "meituan_v10.10.403.apk":
-    {
-    "debName":"meituan",
-    "debVersion":"10.10.403",
-    "platform":"all",
-    "appDesktop":"anbox-com-sankuai-meituan.desktop",
-    "appIcon":"anbox-com-sankuai-meituan.png",
-    "androidName":"com.sankuai.meituan"
+    "douyin_v11.3.0.apk": {
+        "androidName": "com.ss.android.ugc.aweme",
+        "appDesktop": "uos-android-com-ss-android-ugc-aweme.desktop",
+        "appIcon": "uos-android-com-ss-android-ugc-aweme.png",
+        "debName": "douyin",
+        "debVersion": "11.3.0",
+        "platform": "all"
     },
-
-    "qiyeweixin_v3.0.25.apk":
-    {
-    "debName":"qiyeweixin",
-    "debVersion":"3.0.25",
-    "platform":"all",
-    "appDesktop":"anbox-com-tencent-wework.desktop",
-    "appIcon":"anbox-com-tencent-wework.png",
-    "androidName":"com.tencent.wework"
+    "group-1100020402_0-meituan.apk": {
+        "androidName": "com.sankuai.meituan",
+        "appDesktop": "uos-android-com-sankuai-meituan_1100020402_0.desktop",
+        "appIcon": "uos-android-com-sankuai-meituan_1100020402_0.png",
+        "debName": "meituan",
+        "debVersion": "1100020402-0",
+        "platform": "all"
     },
-
-    "qq_v8.3.6.apk":
-    {
-    "debName":"qq",
-    "debVersion":"8.3.6",
-    "platform":"all",
-    "appDesktop":"anbox-com-tencent-mobileqq.desktop",
-    "appIcon":"anbox-com-tencent-mobileqq.png",
-    "androidName":"com.tencent.mobileqq"
+    "iqiyi_hd_v7.9.2.apk": {
+        "androidName": "com.qiyi.video.pad",
+        "appDesktop": "uos-android-com-qiyi-video-pad.desktop",
+        "appIcon": "uos-android-com-qiyi-video-pad.png",
+        "debName": "iqiyi-hd",
+        "debVersion": "7.9.2",
+        "platform": "all"
     },
-
-    "qqyinyue_v9.8.0.12.apk":
-    {
-    "debName":"qqyinyue",
-    "debVersion":"9.8.0.12",
-    "platform":"all",
-    "appDesktop":"anbox-com-tencent-qqmusic.desktop",
-    "appIcon":"anbox-com-tencent-qqmusic.png",
-    "androidName":"com.tencent.qqmusic"
+    "jinritoutiao_v7.8.1.apk": {
+        "androidName": "com.ss.android.article.news",
+        "appDesktop": "uos-android-com-ss-android-article-news.desktop",
+        "appIcon": "uos-android-com-ss-android-article-news.png",
+        "debName": "jinritoutiao",
+        "debVersion": "7.8.1",
+        "platform": "all"
     },
-
-    "taobao_9.9.1.apk":
-    {
-    "debName":"taobao",
-    "debVersion":"9.9.1",
-    "platform":"all",
-    "appDesktop":"anbox-com-taobao-taobao.desktop",
-    "appIcon":"anbox-com-taobao-taobao.png",
-    "androidName":"com.taobao.taobao"
+    "meituan_v10.10.403.apk": {
+        "androidName": "com.sankuai.meituan",
+        "appDesktop": "uos-android-com-sankuai-meituan.desktop",
+        "appIcon": "uos-android-com-sankuai-meituan.png",
+        "debName": "meituan",
+        "debVersion": "10.10.403",
+        "platform": "all"
     },
-
-    "tencent_meeting_v1.7.0.47.apk":
-    {
-    "debName":"tencent-meeting",
-    "debVersion":"1.7.0.47",
-    "platform":"all",
-    "appDesktop":"anbox-com-tencent-wemeet-app.desktop",
-    "appIcon":"anbox-com-tencent-wemeet-app.png",
-    "androidName":"com.tencent.wemeet.app"
+    "news_article_tt_wtt_qrcod_v7920_7144_1601187747.apk": {
+        "androidName": "com.ss.android.article.news",
+        "appDesktop": "uos-android-com-ss-android-article-news.desktop",
+        "appIcon": "uos-android-com-ss-android-article-news.png",
+        "debName": "jinritoutiao",
+        "debVersion": "7920-7144-1601187747",
+        "platform": "all"
     },
-
-
-    "TencentVideo_V8.2.28.21361_848.apk":
-    {
-    "debName":"TencentVideo",
-    "debVersion":"8.2.28.21361-848",
-    "platform":"all",
-    "appDesktop":"anbox-com-tencent-qqlive.desktop",
-    "appIcon":"anbox-com-tencent-qqlive.png",
-    "androidName":"com.tencent.qqlive"
+    "qiyeweixin_v3.0.25.apk": {
+        "androidName": "com.tencent.wework",
+        "appDesktop": "uos-android-com-tencent-wework.desktop",
+        "appIcon": "uos-android-com-tencent-wework.png",
+        "debName": "qiyeweixin",
+        "debVersion": "3.0.25",
+        "platform": "all"
     },
-
-    "tonghuashun_v10.11.04.apk":
-    {
-    "debName":"tonghuashun",
-    "debVersion":"10.11.04",
-    "platform":"all",
-    "appDesktop":"anbox-com-hexin-plat-android.desktop",
-    "appIcon":"anbox-com-hexin-plat-android.png",
-    "androidName":"com.hexin.plat.android"
+    "qq_v8.3.6.apk": {
+        "androidName": "com.tencent.mobileqq",
+        "appDesktop": "uos-android-com-tencent-mobileqq.desktop",
+        "appIcon": "uos-android-com-tencent-mobileqq.png",
+        "debName": "qq",
+        "debVersion": "8.3.6",
+        "platform": "all"
     },
-
-
-    "wangyixinwen_v70.7.apk":
-    {
-    "debName":"wangyixinwen",
-    "debVersion":"70.7",
-    "platform":"all",
-    "appDesktop":"anbox-com-netease-newsreader-activity.desktop",
-    "appIcon":"anbox-com-netease-newsreader-activity.png",
-    "androidName":"com.netease.newsreader.activity"
+    "qqyinyue_v9.8.0.12.apk": {
+        "androidName": "com.tencent.qqmusic",
+        "appDesktop": "uos-android-com-tencent-qqmusic.desktop",
+        "appIcon": "uos-android-com-tencent-qqmusic.png",
+        "debName": "qqyinyue",
+        "debVersion": "9.8.0.12",
+        "platform": "all"
     },
-
-    "weixin_v7.0.10.apk":
-    {
-    "debName":"weixin",
-    "debVersion":"7.0.10",
-    "platform":"all",
-    "appDesktop":"anbox-com-tencent-mm.desktop",
-    "appIcon":"anbox-com-tencent-mm.png",
-    "androidName":"com.tencent.mm"
+    "taobao_9.9.1.apk": {
+        "androidName": "com.taobao.taobao",
+        "appDesktop": "uos-android-com-taobao-taobao.desktop",
+        "appIcon": "uos-android-com-taobao-taobao.png",
+        "debName": "taobao",
+        "debVersion": "9.9.1",
+        "platform": "all"
     },
-
-
-    "ximalaya_v6.6.85.3.apk":
-    {
-    "debName":"ximalaya",
-    "debVersion":"6.6.85.3",
-    "platform":"all",
-    "appDesktop":"anbox-com-ximalaya-ting-android.desktop",
-    "appIcon":"anbox-com-ximalaya-ting-android.png",
-    "androidName":"com.ximalaya.ting.android"
+    "tencent_meeting_v1.7.0.47.apk": {
+        "androidName": "com.tencent.wemeet.app",
+        "appDesktop": "uos-android-com-tencent-wemeet-app.desktop",
+        "appIcon": "uos-android-com-tencent-wemeet-app.png",
+        "debName": "tencent-meeting",
+        "debVersion": "1.7.0.47",
+        "platform": "all"
     },
-
-    "xuexiqiangguo_2.13.apk":
-    {
-    "debName":"xuexiqiangguo",
-    "debVersion":"2.13",
-    "platform":"all",
-    "appDesktop":"anbox-cn-xuexi-android.desktop",
-    "appIcon":"anbox-cn-xuexi-android.png",
-    "androidName":"cn.xuexi.android"
+    "tonghuashun_v10.11.04.apk": {
+        "androidName": "com.hexin.plat.android",
+        "appDesktop": "uos-android-com-hexin-plat-android.desktop",
+        "appIcon": "uos-android-com-hexin-plat-android.png",
+        "debName": "tonghuashun",
+        "debVersion": "10.11.04",
+        "platform": "all"
     },
-
-    "youdao_v8.0.1.apk":
-    {
-    "debName":"youdao",
-    "debVersion":"8.0.1",
-    "platform":"all",
-    "appDesktop":"anbox-com-youdao-dict.desktop",
-    "appIcon":"anbox-com-youdao-dict.png",
-    "androidName":"com.youdao.dict"
+    "wangyixinwen_v70.7.apk": {
+        "androidName": "com.netease.newsreader.activity",
+        "appDesktop": "uos-android-com-netease-newsreader-activity.desktop",
+        "appIcon": "uos-android-com-netease-newsreader-activity.png",
+        "debName": "wangyixinwen",
+        "debVersion": "70.7",
+        "platform": "all"
     },
-
-    "zhihu_6.48.0_2112.apk":
-    {
-    "debName":"zhihu",
-    "debVersion":"6.48.0.2112",
-    "platform":"all",
-    "appDesktop":"anbox-com-zhihu-android.desktop",
-    "appIcon":"anbox-com-zhihu-android.png",
-    "androidName":"com.zhihu.android"
+    "weixin7019android1760_arm64.apk": {
+        "androidName": "com.tencent.mm",
+        "appDesktop": "uos-android-com-tencent-mm.desktop",
+        "appIcon": "uos-android-com-tencent-mm.png",
+        "debName": "weixin",
+        "debVersion": "7019-1760",
+        "platform": "all"
+    },
+    "weixin_v7.0.10.apk": {
+        "androidName": "com.tencent.mm",
+        "appDesktop": "uos-android-com-tencent-mm.desktop",
+        "appIcon": "uos-android-com-tencent-mm.png",
+        "debName": "weixin",
+        "debVersion": "7.0.10",
+        "platform": "all"
+    },
+    "ximalaya_v6.6.85.3.apk": {
+        "androidName": "com.ximalaya.ting.android",
+        "appDesktop": "uos-android-com-ximalaya-ting-android.desktop",
+        "appIcon": "uos-android-com-ximalaya-ting-android.png",
+        "debName": "ximalaya",
+        "debVersion": "6.6.85.3",
+        "platform": "all"
+    },
+    "xuexiqiangguo_2.13.apk": {
+        "androidName": "cn.xuexi.android",
+        "appDesktop": "uos-android-cn-xuexi-android.desktop",
+        "appIcon": "uos-android-cn-xuexi-android.png",
+        "debName": "xuexiqiangguo",
+        "debVersion": "2.13",
+        "platform": "all"
+    },
+    "youdao_v8.0.1.apk": {
+        "androidName": "com.youdao.dict",
+        "appDesktop": "uos-android-com-youdao-dict.desktop",
+        "appIcon": "uos-android-com-youdao-dict.png",
+        "debName": "youdao",
+        "debVersion": "8.0.1",
+        "platform": "all"
+    },
+    "zhihu_6.48.0_2112.apk": {
+        "androidName": "com.zhihu.android",
+        "appDesktop": "uos-android-com-zhihu-android.desktop",
+        "appIcon": "uos-android-com-zhihu-android.png",
+        "debName": "zhihu",
+        "debVersion": "6.48.0.2112",
+        "platform": "all"
     }
 }

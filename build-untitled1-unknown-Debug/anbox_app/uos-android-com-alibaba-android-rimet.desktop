@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/usr/bin/deepin-androidbox-launch.sh --action=android.intent.action.MAIN --package=com.alibaba.android.rimet --component=com.alibaba.android.rimet.biz.LaunchHomeActivity
+Icon=/home/uos/.local/share/applications/anbox/anbox-com-alibaba-android-rimet.png
+Name=钉钉
+Terminal=false
+Type=Application
+X-Deepin-Vendor=user-custom

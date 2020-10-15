@@ -43,7 +43,6 @@ QStringList getDirFileNames(const QString& dirPath,QDir::Filters flag,QStringLis
     return QStringList();
 }
 
-
 }
 
 

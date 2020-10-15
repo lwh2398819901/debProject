@@ -28,18 +28,15 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     publisherfunc.cpp \
-    apkinfomanager.cpp \
     apkinfowindow.cpp
 
 HEADERS += \
         mainwindow.h \
     publisherfunc.h \
-    apkinfomanager.h \
     apkinfowindow.h
 
 FORMS += \
         mainwindow.ui \
-    apkinfomanager.ui \
     apkinfowindow.ui
 
 # Default rules for deployment.

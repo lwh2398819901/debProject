@@ -156,12 +156,16 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_7">
           <item>
-           <widget class="QLineEdit" name="addApksLine"/>
-          </item>
-          <item>
            <widget class="QPushButton" name="addApksBtn">
             <property name="text">
              <string>添加apk</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="editApkBtn">
+            <property name="text">
+             <string>查看apk配置文件</string>
             </property>
            </widget>
           </item>
@@ -192,30 +196,6 @@
             </property>
             <property name="tristate">
              <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
-          <item>
-           <spacer name="horizontalSpacer_3">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QPushButton" name="apkManagerBtn">
-            <property name="text">
-             <string>apk属性管理</string>
             </property>
            </widget>
           </item>

@@ -1,0 +1,11 @@
+Package: #debName#
+Version: #debVersion#
+Architecture: #platform#
+Maintainer: liu wh
+Recommends:
+Suggests:
+Section: devel
+Priority: optional
+Multi-Arch: foreign
+Description: #apkName# install
+Depends: exagear

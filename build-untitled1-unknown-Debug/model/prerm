@@ -1,6 +1,6 @@
 #!/bin/bash
 #调用anbox脚本 卸载应用
-(. /usr/bin/anbox-appmgr-demo.sh uninstall -p #androidName#)
+(. /usr/bin/deepin-androidbox-appmgr-demo.sh uninstall -p #androidName#)
 
 res=$?
 
