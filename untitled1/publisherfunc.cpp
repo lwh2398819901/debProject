@@ -1,6 +1,4 @@
 #include "publisherfunc.h"
-
-#include <QDir>
 #include <QFile>
 
 namespace  publisherFunc{

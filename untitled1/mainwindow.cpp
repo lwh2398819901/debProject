@@ -287,56 +287,48 @@ void MainWindow::writeAppPackageNames()
 //添加apkinfo
 void MainWindow::slot_addApkInfo()
 {
-    QString filepath = QFileDialog::getOpenFileName(nullptr,"","","*.apk");
-    if(!filepath.isEmpty())
+    QString filePath = QFileDialog::getOpenFileName(nullptr,"","","*.apk");
+    if(!filePath.isEmpty())
     {
-        addApkInfo(filepath);
+        QFileInfo fileINfo(filePath);
+        ApkInfo *apk;
+        auto it = m_apppAckageNames.find(fileINfo.fileName());
+        if(it!=m_apppAckageNames.end())
+        {
+            apk = new ApkInfo(it.value());
+        }
+        else {
+            apk = new ApkInfo();
+            apk->apkName = fileINfo.fileName();
+            apk->platform ="all";
+        }
+
+        ApkInfoWindow*w =new ApkInfoWindow(apk,nullptr);
+        connect(w,&ApkInfoWindow::sig_save,[=](){
+            m_apppAckageNames.insert(apk->apkName,*apk);
+            delete apk;
+            isAddApk=true;
+            writeAppPackageNames();
+        });
+        connect(w,&ApkInfoWindow::sig_cancel,[=](){
+            delete apk;
+        });
+
+        w->show();
     }
 }
-
-void MainWindow::addApkInfo(QString filePath)
-{
-    QFileInfo fileINfo(filePath);
-    ApkInfo *apk;
-    auto it = m_apppAckageNames.find(fileINfo.fileName());
-    if(it!=m_apppAckageNames.end())
-    {
-        apk = new ApkInfo(it.value());
-    }
-    else {
-        apk = new ApkInfo();
-        apk->apkName = fileINfo.fileName();
-        apk->platform ="all";
-    }
-
-    ApkInfoWindow*w =new ApkInfoWindow(apk,nullptr);
-    connect(w,&ApkInfoWindow::sig_save,[=](){
-        m_apppAckageNames.insert(apk->apkName,*apk);
-        delete apk;
-        isAddApk=true;
-        writeAppPackageNames();
-    });
-    connect(w,&ApkInfoWindow::sig_cancel,[=](){
-        delete apk;
-    });
-
-    w->show();
-}
-
 
 /********************************外部程序输出*************************************/
 //标准输出
 void MainWindow::readBashStandardOutputInfo()
 {
-    QByteArray cmdout = m_proces_bash->readAllStandardOutput();
-    ui->textEdit->append(cmdout);
+    ui->textEdit->append(m_proces_bash->readAllStandardOutput());
 }
 
 //标准错误
 void MainWindow::readBashStandardErrorInfo()
 {
-    QByteArray cmdout = m_proces_bash->readAllStandardError();
-    ui->textEdit->append(cmdout);
+    ui->textEdit->append(m_proces_bash->readAllStandardError());
 }
 
 

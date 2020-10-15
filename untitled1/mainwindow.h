@@ -42,10 +42,6 @@ private:
     //读写配置文件
     void readConfig();
     void writeConfig();
-
-    void addApkInfo(QString filePath);
-signals:
-    void sig_updateAppInfo();
 private:
     Ui::MainWindow *ui;
     QString m_loadDir;
