@@ -1,0 +1,71 @@
+#! /bin/bash
+
+#-------------------------------------函数声明--------------------------------------------#
+# 检查服务是否存在
+srviceStatus()
+{
+    res=12;
+    ps -ef | grep "deepin-androidbox session-manager" > /opt/deepin-androidbox-session-manager.txt
+    sed -i '/grep/d' /opt/deepin-androidbox-session-manager.txt
+    if [ -s /opt/deepin-androidbox-session-manager.txt ];then
+        res=0  
+    fi
+    return $res  
+}
+
+#判断文件是否存在 删除文件或者目录
+deleteFileOrDir()
+{
+    files=$1
+    if [ -e $1 ];then
+        rm -rf $1
+    fi
+}
+#清除残留
+cleanAll()
+{
+    deleteFileOrDir "#apkDir#"
+    deleteFileOrDir "/var/lib/dpkg/info/#debName#.md5sums"
+    deleteFileOrDir "/var/lib/dpkg/info/#debName#.prerm"
+    deleteFileOrDir "/var/lib/dpkg/info/#debName#.postinst"
+    deleteFileOrDir "/var/lib/dpkg/info/#debName#.list"
+}
+
+#安装
+installApp()
+{
+    (. /usr/bin/android-appmgr.sh install -r  "#apkDir#/files/#apkName#")
+    result=$?
+    # 判断是否安装成功 安装成功 删除apk 
+    if [ "$result" == 0 ] ;then
+        deleteFileOrDir "#apkDir#/files/#apkName#"
+        echo "#debName#  install successfully"
+    else
+         #安装 失败 清理残留文件
+        echo "#debName#  uninstall Failed: $result"
+        cleanAll        
+    fi
+    exit "$result" 
+}
+
+
+#-------------------------------------工作流程--------------------------------------------#
+
+#检查服务是否启动
+srviceStatus
+res=$?
+if [ "$res" == 0 ];then
+    installApp
+else
+#等待服务安装
+    sleep 20
+#再次检查服务 
+    srviceStatus
+    res=$?
+    if [ "$res" == 0 ];then
+        installApp
+    else
+        cleanAll
+        exit 12
+    fi
+fi

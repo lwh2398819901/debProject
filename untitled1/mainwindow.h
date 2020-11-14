@@ -4,11 +4,14 @@
 #include <QLineEdit>
 #include <QMainWindow>
 #include <QProcess>
+#include "apkinfo.h"
 #include "publisherfunc.h"
 
 namespace Ui {
 class MainWindow;
 }
+
+
 
 class MainWindow : public QMainWindow
 {
@@ -34,7 +37,7 @@ private:
     void getDirPath(QLineEdit*line);
     void createDeb(QString debPath,QString debName);
     QString replaceString(QString src,const ApkInfo&apk);
-    void iconChanged(const ApkInfo&apk,const QString filePaht);
+    void iconChanged(const ApkInfo&apk,const QString filePath);
 
     //读写apk属性
     void readAppPackageNames();
@@ -42,6 +45,7 @@ private:
     //读写配置文件
     void readConfig();
     void writeConfig();
+
 private:
     Ui::MainWindow *ui;
     QString m_loadDir;
@@ -55,8 +59,11 @@ private:
     QString model_control;
     QString model_postinst;
     QString model_prerm;
+    QString model_info;
 
     bool isAddApk;
+
+    QString m_iconDir;
 };
 
 

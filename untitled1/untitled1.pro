@@ -33,7 +33,8 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
     publisherfunc.h \
-    apkinfowindow.h
+    apkinfowindow.h \
+    apkinfo.h
 
 FORMS += \
         mainwindow.ui \

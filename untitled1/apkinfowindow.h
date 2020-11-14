@@ -2,6 +2,7 @@
 #define APKINFOWINDOW_H
 
 #include <QWidget>
+#include "apkinfo.h"
 #include "publisherfunc.h"
 
 namespace Ui {
@@ -17,10 +18,8 @@ public:
     ~ApkInfoWindow();
     void slot_writeApkInfo();
     void slot_cancel();
-
 signals:
-    void sig_save();
-    void sig_cancel();
+    void sig_save(bool );
 private:
     void init();
 private:

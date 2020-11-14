@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=地铁跑酷
+Exec=/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.kiloo.subwaysurf --component=com.kiloo.subwaysurf.GameStartActivity 
+Terminal=false
+Type=Application
+Icon=/home/uos/.local/share/applications/anbox/anbox-com-kiloo-subwaysurf.png

@@ -1,0 +1,37 @@
+#!/bin/bash
+#-------------------------------------函数声明--------------------------------------------#
+srviceStatus()
+{
+    res=12;
+    ps -ef | grep "deepin-androidbox session-manager" > /opt/deepin-androidbox-session-manager.txt
+    sed -i '/grep/d' /opt/deepin-androidbox-session-manager.txt
+    if [ -s /opt/deepin-androidbox-session-manager.txt ];then
+        res=0  
+    fi  
+    return $res  
+}
+
+#-------------------------------------工作流程--------------------------------------------#
+
+#检查服务是否启动
+srviceStatus
+res=$?
+
+if [ "$res" == 0 ];then
+    if [ -s /opt/deepin-androidbox-session-manager.txt ];then
+        check=`/usr/bin/android-appmgr.sh package-list | grep "#androidName#"`
+        if [ "$check" != "" ];then            
+            (. /usr/bin/android-appmgr.sh  uninstall -p #androidName#)
+            res=$?    
+            if [ "$res" == 0 ] ;then
+                echo "#debName# uninstall successfully"
+            else
+                echo "#debName# uninstall Failed: $res"
+            fi
+            exit "$res" 
+        fi
+        exit 0
+    fi
+    exit 13
+fi
+exit 12
