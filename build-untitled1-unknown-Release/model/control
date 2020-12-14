@@ -9,4 +9,4 @@ Priority: optional
 Multi-Arch: foreign
 Description: #description# Android application installation
 homepage: www.uniontech.com
-Depends: exagear
+Depends: exagear,android-image,kbox,kboxapplauncher,kboxlaunservice

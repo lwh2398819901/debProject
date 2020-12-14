@@ -14,6 +14,7 @@
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
@@ -29,7 +30,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QGridLayout *gridLayout;
+    QGridLayout *gridLayout_2;
     QTabWidget *tabWidget;
     QWidget *tab;
     QVBoxLayout *verticalLayout;
@@ -45,7 +46,7 @@ public:
     QCheckBox *checkBox;
     QPushButton *actionBtn;
     QWidget *tab_2;
-    QVBoxLayout *verticalLayout_2;
+    QGridLayout *gridLayout;
     QHBoxLayout *horizontalLayout_3;
     QLineEdit *desktoLine;
     QPushButton *desktopBtn;
@@ -55,6 +56,9 @@ public:
     QHBoxLayout *horizontalLayout_7;
     QPushButton *addApksBtn;
     QPushButton *editApkBtn;
+    QHBoxLayout *horizontalLayout_8;
+    QLineEdit *execLine;
+    QLabel *label;
     QHBoxLayout *horizontalLayout_5;
     QSpacerItem *horizontalSpacer_2;
     QCheckBox *iconCheckBox;
@@ -66,10 +70,10 @@ public:
         MainWindow->resize(387, 361);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        gridLayout = new QGridLayout(centralWidget);
-        gridLayout->setSpacing(6);
-        gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        gridLayout_2 = new QGridLayout(centralWidget);
+        gridLayout_2->setSpacing(6);
+        gridLayout_2->setContentsMargins(11, 11, 11, 11);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tab = new QWidget();
@@ -140,10 +144,10 @@ public:
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
-        verticalLayout_2 = new QVBoxLayout(tab_2);
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        gridLayout = new QGridLayout(tab_2);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
@@ -159,7 +163,7 @@ public:
         horizontalLayout_3->addWidget(desktopBtn);
 
 
-        verticalLayout_2->addLayout(horizontalLayout_3);
+        gridLayout->addLayout(horizontalLayout_3, 0, 0, 1, 1);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
@@ -176,7 +180,7 @@ public:
         horizontalLayout_4->addWidget(apkDirBtn);
 
 
-        verticalLayout_2->addLayout(horizontalLayout_4);
+        gridLayout->addLayout(horizontalLayout_4, 1, 0, 1, 1);
 
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setSpacing(6);
@@ -192,7 +196,23 @@ public:
         horizontalLayout_7->addWidget(editApkBtn);
 
 
-        verticalLayout_2->addLayout(horizontalLayout_7);
+        gridLayout->addLayout(horizontalLayout_7, 2, 0, 1, 1);
+
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setSpacing(6);
+        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
+        execLine = new QLineEdit(tab_2);
+        execLine->setObjectName(QStringLiteral("execLine"));
+
+        horizontalLayout_8->addWidget(execLine);
+
+        label = new QLabel(tab_2);
+        label->setObjectName(QStringLiteral("label"));
+
+        horizontalLayout_8->addWidget(label);
+
+
+        gridLayout->addLayout(horizontalLayout_8, 3, 0, 1, 1);
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
@@ -209,11 +229,11 @@ public:
         horizontalLayout_5->addWidget(iconCheckBox);
 
 
-        verticalLayout_2->addLayout(horizontalLayout_5);
+        gridLayout->addLayout(horizontalLayout_5, 4, 0, 1, 1);
 
         tabWidget->addTab(tab_2, QString());
 
-        gridLayout->addWidget(tabWidget, 0, 0, 1, 1);
+        gridLayout_2->addWidget(tabWidget, 0, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
 
@@ -239,11 +259,12 @@ public:
         actionBtn->setText(QApplication::translate("MainWindow", "\347\224\237\346\210\220\346\226\207\344\273\266", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "\344\270\273\347\225\214\351\235\242", nullptr));
         desktoLine->setText(QString());
-        desktopBtn->setText(QApplication::translate("MainWindow", "\345\233\276\346\240\207\347\233\256\345\275\225", nullptr));
+        desktopBtn->setText(QApplication::translate("MainWindow", "desktop\347\233\256\345\275\225", nullptr));
         apkDirLine->setText(QString());
         apkDirBtn->setText(QApplication::translate("MainWindow", "\345\272\224\347\224\250\347\233\256\345\275\225", nullptr));
         addApksBtn->setText(QApplication::translate("MainWindow", "\346\267\273\345\212\240apk", nullptr));
         editApkBtn->setText(QApplication::translate("MainWindow", "\346\237\245\347\234\213apk\351\205\215\347\275\256\346\226\207\344\273\266", nullptr));
+        label->setText(QApplication::translate("MainWindow", "exec\347\233\256\345\275\225", nullptr));
         iconCheckBox->setText(QApplication::translate("MainWindow", "\344\277\256\346\224\271icon", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("MainWindow", "\350\256\276\347\275\256", nullptr));
     } // retranslateUi

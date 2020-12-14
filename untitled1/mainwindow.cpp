@@ -105,11 +105,11 @@ void MainWindow::slot_createDirAndDeb(){
 
             //创建control postinst prer
             createFile(DebianDir+"control",replaceString(model_control,apk));
-            createFile(DebianDir+"postinst",replaceString(model_postinst,apk));
+            //createFile(DebianDir+"postinst",replaceString(model_postinst,apk));
             createFile(DebianDir+"prerm",replaceString(model_prerm,apk));
             //更改权限0755
             chmod((DebianDir+"control").toLocal8Bit().data(),0755);
-            chmod((DebianDir+"postinst").toLocal8Bit().data(),0755);
+            //chmod((DebianDir+"postinst").toLocal8Bit().data(),0755);
             chmod((DebianDir+"prerm").toLocal8Bit().data(),0755);
 
             //创建icon文件
@@ -176,10 +176,14 @@ QString MainWindow::replaceString(QString src, const ApkInfo &apk){
 //修改icon内容
 void MainWindow::iconChanged(const ApkInfo &apk, const QString filePath){
     QStringList list =readFile(filePath).split("\n");
+    QString exec = ui->execLine->text();
     QString text;
+    qDebug()<<"===================="<<list;
     foreach(const QString &str, list){
         if(str.startsWith("Icon="))
             text += "Icon="+m_iconDir+apk.debName+".png\n";
+        else if(str.startsWith("Exec="))
+            text +="Exec="+exec+" "+apk.debName+" "+apk.debVersion+"\n";
         else
             text += (str+"\n");
     }
@@ -300,6 +304,7 @@ void MainWindow::readConfig(){
     ui->apkDirLine->setText(configIni.value( "settings/apkDirLine").toString());
     ui->checkBox->setChecked(configIni.value("mainWindwos/debCheckBox").toBool());
     ui->iconCheckBox->setChecked(configIni.value("settings/iconCheckBox").toBool());
+     ui->execLine->setText(configIni.value( "settings/execline").toString());
 }
 
 void MainWindow::writeConfig(){
@@ -310,6 +315,7 @@ void MainWindow::writeConfig(){
     configIni.setValue( "settings/desktoLine" ,ui->desktoLine->text());
     configIni.setValue( "settings/apkDirLine" ,ui->apkDirLine->text());
     configIni.setValue( "settings/iconCheckBox" ,ui->iconCheckBox->checkState()==Qt::CheckState::Checked);
+     configIni.setValue( "settings/execline" ,ui->execLine->text());
 }
 
 

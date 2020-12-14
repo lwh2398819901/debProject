@@ -1,9 +1,9 @@
 #!/bin/bash
 #-------------------------------------函数声明--------------------------------------------#
-srviceStatus()
+serviceStatus()
 {
     res=12;
-    ps -ef | grep "kbox session-manager" > /opt/kbox-session-manager.txt
+    ps -ef | grep "Kbox session-manager" > /opt/kbox-session-manager.txt
     sed -i '/grep/d' /opt/kbox-session-manager.txt
     if [ -s /opt/kbox-session-manager.txt ];then
         res=0  
@@ -14,7 +14,7 @@ srviceStatus()
 #-------------------------------------工作流程--------------------------------------------#
 
 #检查服务是否启动
-srviceStatus
+serviceStatus
 res=$?
 
 if [ "$res" == 0 ];then
