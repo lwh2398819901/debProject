@@ -1,0 +1,92 @@
+package:cn.xuexi.android
+        component:com.alibaba.android.rimet.biz.SplashActivity
+        title:学习强国
+        version:2.19.0
+package:com.alibaba.android.rimet
+        component:com.alibaba.android.rimet.biz.LaunchHomeActivity
+        title:钉钉
+        version:5.1.40
+package:com.douban.frodo
+        component:com.douban.frodo.activity.SplashActivity
+        title:豆瓣
+        version:6.48.0
+package:com.hexin.plat.android
+        component:com.hexin.plat.android.AndroidLogoActivity
+        title:同花顺
+        version:10.20.02
+package:com.kiloo.subwaysurf
+        component:com.kiloo.subwaysurf.GameStartActivity
+        title:地铁跑酷
+        version:3.13.0
+package:com.netease.newsreader.activity
+        component:com.netease.nr.biz.ad.newAd.AdActivity
+        title:网易新闻
+        version:74.1
+package:com.qiyi.video.pad
+        component:org.qiyi.android.video.MainActivity
+        title:爱奇艺HD
+        version:11.10.1
+package:com.sankuai.meituan
+        component:com.meituan.android.pt.homepage.activity.MainActivity
+        title:美团
+        version:11.4.204
+packageName=com.ss.android.article.news
+package:com.ss.android.article.news
+        component:com.ss.android.article.news.activity.MainActivity
+        title:今日头条
+        version:8.0.1
+packageName=com.ss.android.ugc.aweme
+package:com.ss.android.ugc.aweme
+        component:com.ss.android.ugc.aweme.splash.SplashActivity
+        title:抖音
+        version:13.9.0
+packageName=com.taobao.taobao
+package:com.taobao.taobao
+        component:com.taobao.tao.welcome.Welcome
+        title:手机淘宝
+        version:9.16.0
+packageName=com.tencent.mm
+package:com.tencent.mm
+        component:com.tencent.mm.ui.LauncherUI
+        title:微信
+        version:7.0.21
+packageName=com.tencent.mobileqq
+package:com.tencent.mobileqq
+        component:com.tencent.mobileqq.activity.SplashActivity
+        title:QQ
+        version:8.5.5
+packageName=com.tencent.qqlive
+package:com.tencent.qqlive
+        component:com.tencent.qqlive.ona.activity.SplashHomeActivity
+        title:腾讯视频
+        version:8.2.75.21629
+packageName=com.tencent.qqmusic
+package:com.tencent.qqmusic
+        component:com.tencent.qqmusic.activity.AppStarterActivity
+        title:QQ音乐
+        version:10.7.0.7
+packageName=com.tencent.wemeet.app
+package:com.tencent.wemeet.app
+        component:com.tencent.wemeet.app.StartupActivity
+        title:腾讯会议
+        version:2.4.0.456
+packageName=com.tencent.wework
+package:com.tencent.wework
+        component:com.tencent.wework.launch.LaunchSplashActivity
+        title:企业微信
+        version:3.0.40
+packageName=com.ximalaya.ting.android
+package:com.ximalaya.ting.android
+        component:com.ximalaya.ting.android.host.activity.WelComeActivity
+        title:喜马拉雅
+        version:6.7.27.3
+packageName=com.youdao.dict
+package:com.youdao.dict
+        component:com.youdao.dict.activity.DictSplashActivity
+        title:网易有道词典
+        version:9.0.3
+packageName=com.zhihu.android
+package:com.zhihu.android
+        component:com.zhihu.android.app.ui.activity.LauncherActivity
+        title:知乎
+        version:6.67.0

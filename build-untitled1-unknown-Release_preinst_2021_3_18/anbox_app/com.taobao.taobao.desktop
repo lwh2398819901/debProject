@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=手机淘宝
+Exec=/home/Kbox/slink/com.taobao.taobao launcher launcherapp -n "com.taobao.taobao" -c "com.taobao.tao.welcome.Welcome" -t "手机淘宝" -i "/home/Kbox/icons/com.taobao.taobao.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.taobao.taobao.png
+Comment=手机淘宝

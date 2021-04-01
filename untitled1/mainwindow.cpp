@@ -105,11 +105,11 @@ void MainWindow::slot_createDirAndDeb(){
 
             //创建control postinst prer
             createFile(DebianDir+"control",replaceString(model_control,apk));
-            //createFile(DebianDir+"postinst",replaceString(model_postinst,apk));
+            createFile(DebianDir+"postinst",replaceString(model_postinst,apk));
             createFile(DebianDir+"prerm",replaceString(model_prerm,apk));
             //更改权限0755
             chmod((DebianDir+"control").toLocal8Bit().data(),0755);
-            //chmod((DebianDir+"postinst").toLocal8Bit().data(),0755);
+            chmod((DebianDir+"postinst").toLocal8Bit().data(),0755);
             chmod((DebianDir+"prerm").toLocal8Bit().data(),0755);
 
             //创建icon文件
@@ -182,8 +182,8 @@ void MainWindow::iconChanged(const ApkInfo &apk, const QString filePath){
     foreach(const QString &str, list){
         if(str.startsWith("Icon="))
             text += "Icon="+m_iconDir+apk.debName+".png\n";
-        else if(str.startsWith("Exec="))
-            text +="Exec="+exec+" "+apk.debName+" "+apk.debVersion+"\n";
+//        else if(str.startsWith("Exec="))
+//            text +="Exec="+exec+" "+apk.debName+" "+apk.debVersion+"\n";
         else
             text += (str+"\n");
     }
@@ -208,7 +208,6 @@ void MainWindow::readAppPackageNames(){
     }
 
     QJsonObject rootObj = jsonDoc.object();
-    qDebug()<<rootObj;
     foreach(QString key,rootObj.keys()){
         if(rootObj[key].isObject()){
             ApkInfo apk;
@@ -223,6 +222,7 @@ void MainWindow::readAppPackageNames(){
             apk.zhName=obj.value("zhName").toString();
             apk.description=obj.value("description").toString();
             m_apppAckageNames.insert(key,apk);
+            qDebug()<<apk.zhName<<apk.debVersion;
         }
     }
 }

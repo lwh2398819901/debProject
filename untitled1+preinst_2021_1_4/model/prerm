@@ -1,0 +1,3 @@
+#! /bin/bash
+Res=`bash /opt/KboxAppLauncher/bin/kboxAppPrerm.sh #androidName#`
+exit $Res;

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=QQ音乐
+Exec=/home/Kbox/slink/com.tencent.qqmusic launcher launcherapp -n "com.tencent.qqmusic" -c "com.tencent.qqmusic.activity.AppStarterActivity" -t "QQ音乐" -i "/home/Kbox/icons/com.tencent.qqmusic.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.tencent.qqmusic.png
+Comment=QQ音乐

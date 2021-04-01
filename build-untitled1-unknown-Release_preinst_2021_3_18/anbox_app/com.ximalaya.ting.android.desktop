@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=喜马拉雅
+Exec=/home/Kbox/slink/com.ximalaya.ting.android launcher launcherapp -n "com.ximalaya.ting.android" -c "com.ximalaya.ting.android.host.activity.WelComeActivity" -t "喜马拉雅" -i "/home/Kbox/icons/com.ximalaya.ting.android.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.ximalaya.ting.android.png
+Comment=喜马拉雅

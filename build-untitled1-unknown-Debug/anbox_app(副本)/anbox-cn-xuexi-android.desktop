@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=学习强国
-Exec=/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=cn.xuexi.android --component=com.alibaba.android.rimet.biz.SplashActivity 
-Terminal=false
-Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-cn-xuexi-android.png

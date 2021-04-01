@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=腾讯会议
-Exec=/usr/bin/deepin-androidbox-launch.sh --action=android.intent.action.MAIN --package=com.tencent.wemeet.app --component=com.tencent.wemeet.app.StartupActivity 
-Terminal=false
-Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-tencent-wemeet-app.png

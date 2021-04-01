@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=QQ音乐
-Exec=/usr/bin/deepin-androidbox-launch.sh --action=android.intent.action.MAIN --package=com.tencent.qqmusic --component=com.tencent.qqmusic.activity.AppStarterActivity 
-Terminal=false
-Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-tencent-qqmusic.png

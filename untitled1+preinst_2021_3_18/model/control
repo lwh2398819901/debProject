@@ -1,0 +1,12 @@
+Package: #debName#
+Version: #debVersion#
+Architecture: #platform#
+Maintainer: Uniontechos THIRD Maintainers <uniontechos-third@uniontech.com>
+Recommends:
+Suggests:
+Section: devel
+Priority: optional
+Multi-Arch: foreign
+Description: #description# Android application installation
+homepage: www.uniontech.com
+Depends: exagear,android-image,kbox(>=1.0.11.7),kboxapplauncher (>= 1.0.2),kboxlaunservice (>= 1.0.2)

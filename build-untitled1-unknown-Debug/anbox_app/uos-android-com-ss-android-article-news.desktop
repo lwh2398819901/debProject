@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=今日头条
-Exec=/usr/bin/deepin-androidbox-launch.sh --action=android.intent.action.MAIN --package=com.ss.android.article.news --component=com.ss.android.article.news.activity.MainActivity 
-Terminal=false
-Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-ss-android-article-news.png

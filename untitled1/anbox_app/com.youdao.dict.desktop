@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=网易有道词典
+Exec=/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.youdao.dict --component=com.youdao.dict.activity.DictSplashActivity 
+Terminal=false
+Type=Application
+Icon=/home/uos/.local/share/applications/anbox/anbox-com-youdao-dict.png

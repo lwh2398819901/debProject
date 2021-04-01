@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=腾讯视频
-Exec=/usr/bin/deepin-androidbox-launch.sh --action=android.intent.action.MAIN --package=com.tencent.qqlive --component=com.tencent.qqlive.ona.activity.SplashHomeActivity 
-Terminal=false
-Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-tencent-qqlive.png

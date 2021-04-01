@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=QQ
+Exec=/home/Kbox/slink/com.tencent.mobileqq launcher launcherapp -n "com.tencent.mobileqq" -c "com.tencent.mobileqq.activity.SplashActivity" -t "QQ" -i "/home/Kbox/icons/com.tencent.mobileqq.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.tencent.mobileqq.png
+Comment=QQ

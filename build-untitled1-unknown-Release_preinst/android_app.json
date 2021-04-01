@@ -1,0 +1,263 @@
+{
+    "163_apk_newsapp_newsreader_netease_gw.apk": {
+        "androidName": "com.netease.newsreader.activity",
+        "appDesktop": "com.netease.newsreader.activity.desktop",
+        "appIcon": "com.netease.newsreader.activity.png",
+        "debName": "com.netease.newsreader.activity",
+        "debVersion": "72.2",
+        "platform": "arm64",
+        "zhName": "网易新闻",
+        "description":"NetEase News"
+    },
+    "Androidqq_8.4.8.4810_537065343.apk": {
+        "androidName": "com.tencent.mobileqq",
+        "appDesktop": "com.tencent.mobileqq.desktop",
+        "appIcon": "com.tencent.mobileqq.png",
+        "debName": "com.tencent.mobileqq",
+        "debVersion": "8.4.9",
+        "platform": "arm64",
+        "zhName": "QQ",
+        "description":"QQ"
+    },
+    "TencentMeeting_0300000000_2.1.1.438.publish.apk": {
+        "androidName": "com.tencent.wemeet.app",
+        "appDesktop": "com.tencent.wemeet.app.desktop",
+        "appIcon": "com.tencent.wemeet.app.png",
+        "debName": "com.tencent.wemeet.app",
+        "debVersion": "2.1.1.439",
+        "platform": "arm64",
+        "zhName": "腾讯会议",
+        "description":"Tencent meeting"
+    },
+    "TencentVideo_V8.2.28.21361_848.apk": {
+        "androidName": "com.tencent.qqlive",
+        "appDesktop": "com.tencent.qqlive.desktop",
+        "appIcon": "com.tencent.qqlive.png",
+        "debName": "com.tencent.qqlive",
+        "debVersion": "8.2.28.21361",
+        "platform": "arm64",
+        "zhName": "腾讯视频",
+        "description":"qqlive"
+    },
+    "com.douban.frodo_douban_6.44.0_196.apk": {
+        "androidName": "com.douban.frodo",
+        "appDesktop": "com.douban.frodo.desktop",
+        "appIcon": "com.douban.frodo.png",
+        "debName": "com.douban.frodo",
+        "debVersion": "6.44",
+        "platform": "arm64",
+        "zhName": "豆瓣",
+        "description":"douban"
+    },
+    "dingding_v5.1.5.apk": {
+        "androidName": "com.alibaba.android.rimet",
+        "appDesktop": "com.alibaba.android.rimet.desktop",
+        "appIcon": "com.alibaba.android.rimet.png",
+        "debName": "com.alibaba.android.rimet",
+        "debVersion": "5.15.1",
+        "platform": "arm64",
+        "zhName": "钉钉",
+        "description":"Ding Talk"
+    },
+    "ditiepaoku_v3.09.apk": {
+        "androidName": "com.kiloo.subwaysurf",
+        "appDesktop": "com.kiloo.subwaysurf.desktop",
+        "appIcon": "com.kiloo.subwaysurf.png",
+        "debName": "com.kiloo.subwaysurf",
+        "debVersion": "3.09.0",
+        "platform": "arm64",
+        "zhName": "地铁跑酷",
+        "description":"Subway Surfers"
+    },
+    "douban_v6.40.apk": {
+        "androidName": "com.douban.frodo",
+        "appDesktop": "com.douban.frodo.desktop",
+        "appIcon": "com.douban.frodo.png",
+        "debName": "com.douban.frodo",
+        "debVersion": "6.40",
+        "platform": "arm64",
+        "zhName": "豆瓣",
+        "description":"douban"
+    },
+    "douyin_v11.3.0.apk": {
+        "androidName": "com.ss.android.ugc.aweme",
+        "appDesktop": "com.ss.android.ugc.aweme.desktop",
+        "appIcon": "com.ss.android.ugc.aweme.png",
+        "debName": "com.ss.android.ugc.aweme",
+        "debVersion": "11.3.0",
+        "platform": "arm64",
+        "zhName": "抖音",
+        "description":"Tik Tok"
+    },
+
+    "aweme_aweGW_v1015_130201_e9c9_1603269590.apk": {
+        "androidName": "com.ss.android.ugc.aweme",
+        "appDesktop": "com.ss.android.ugc.aweme.desktop",
+        "appIcon": "com.ss.android.ugc.aweme.png",
+        "debName": "com.ss.android.ugc.aweme",
+        "debVersion": "13.2.1",
+        "platform": "arm64",
+        "zhName": "抖音短视频",
+        "description":"Tik Tok"
+    },
+    "group-1100020402_0-meituan.apk": {
+        "androidName": "com.sankuai.meituan",
+        "appDesktop": "com.sankuai.meituan.desktop",
+        "appIcon": "com.sankuai.meituan.png",
+        "debName": "com.sankuai.meituan",
+        "debVersion": "11.2.402",
+        "platform": "arm64",
+        "zhName": "美团",
+        "description":"meituan"
+    },
+    "iqiyi_hd_v7.9.2.apk": {
+        "androidName": "com.qiyi.video.pad",
+        "appDesktop": "com.qiyi.video.pad.desktop",
+        "appIcon": "com.qiyi.video.pad.png",
+        "debName": "com.qiyi.video.pad",
+        "debVersion": "7.9.3",
+        "platform": "arm64",
+        "zhName": "爱奇艺 HD",
+        "description":"iQiYi"
+    },
+    "jinritoutiao_v7.8.1.apk": {
+        "androidName": "com.ss.android.article.news",
+        "appDesktop": "com.ss.android.article.desktop",
+        "appIcon": "com.ss.android.article.png",
+        "debName": "com.ss.android.article.news",
+        "debVersion": "7.81",
+        "platform": "arm64",
+        "zhName": "今日头条",
+        "description":"jinritoutiao"
+    },
+    "meituan_v10.10.403.apk": {
+        "androidName": "com.sankuai.meituan",
+        "appDesktop": "com.sankuai.meituan.desktop",
+        "appIcon": "com.sankuai.meituan.png",
+        "debName": "com.sankuai.meituan",
+        "debVersion": "10.10.403",
+        "platform": "arm64",
+        "zhName": "美团",
+        "description":"meituan"
+    },
+    "news_article_tt_wtt_qrcod_v7920_7144_1601187747.apk": {
+        "androidName": "com.ss.android.article.news",
+        "appDesktop": "com.ss.android.article.news.desktop",
+        "appIcon": "com.ss.android.article.news.png",
+        "debName": "com.ss.android.article.news",
+        "debVersion": "7.9.3",
+        "platform": "arm64",
+        "zhName": "今日头条",
+        "description":"jinritoutiao"
+    },
+    "qiyeweixin_v3.0.25.apk": {
+        "androidName": "com.tencent.wework",
+        "appDesktop": "com.tencent.wework.desktop",
+        "appIcon": "com.tencent.wework.png",
+        "debName": "com.tencent.wework",
+        "debVersion": "3.0.26",
+        "platform": "arm64",
+        "zhName": "企业微信",
+        "description":"wework"
+    },
+    "qq_v8.3.6.apk": {
+        "androidName": "com.tencent.mobileqq",
+        "appDesktop": "com.tencent.mobileqq.desktop",
+        "appIcon": "com.tencent.mobileqq.png",
+        "debName": "com.tencent.mobileqq",
+        "debVersion": "8.3.6",
+        "platform": "arm64",
+        "zhName": "QQ",
+        "description":"QQ"
+    },
+    "qqyinyue_v9.8.0.12.apk": {
+        "androidName": "com.tencent.qqmusic",
+        "appDesktop": "com.tencent.qqmusic.desktop",
+        "appIcon": "com.tencent.qqmusic.png",
+        "debName": "com.tencent.qqmusic",
+        "debVersion": "9.8.0.12",
+        "platform": "arm64",
+        "zhName": "qq音乐",
+        "description":"qqmusic"
+    },
+    "taobao_9.9.1.apk": {
+        "androidName": "com.taobao.taobao",
+        "appDesktop": "com.taobao.taobao.desktop",
+        "appIcon": "com.taobao.taobao.png",
+        "debName": "com.taobao.taobao",
+        "debVersion": "9.9.1",
+        "platform": "arm64",
+        "zhName": "淘宝",
+        "description":"taobao"
+    },
+    "tonghuashun_v10.11.04.apk": {
+        "androidName": "com.hexin.plat.android",
+        "appDesktop": "com.hexin.plat.android.desktop",
+        "appIcon": "com.hexin.plat.android.png",
+        "debName": "com.hexin.plat.android",
+        "debVersion": "10.11.05",
+        "platform": "arm64",
+        "zhName": "同花顺",
+        "description":"tonghuashun"
+    },
+    "weixin7019android1760_arm64.apk": {
+        "androidName": "com.tencent.mm",
+        "appDesktop": "com.tencent.mm.desktop",
+        "appIcon": "com.tencent.mm.png",
+        "debName": "com.tencent.mm",
+        "debVersion": "7.0.20",
+        "platform": "arm64",
+        "zhName": "微信",
+        "description":"weixin"
+    },
+    "weixin_v7.0.10.apk": {
+        "androidName": "com.tencent.mm",
+        "appDesktop": "com.tencent.mm.desktop",
+        "appIcon": "com.tencent.mm.png",
+        "debName": "com.tencent.mm",
+        "debVersion": "7.0.10",
+        "platform": "arm64",
+        "zhName": "微信",
+        "description":"weixin"
+    },
+    "ximalaya_v6.6.85.3.apk": {
+        "androidName": "com.ximalaya.ting.android",
+        "appDesktop": "com.ximalaya.ting.android.desktop",
+        "appIcon": "com.ximalaya.ting.android.png",
+        "debName": "com.ximalaya.ting.android",
+        "debVersion": "6.6.85.3",
+        "platform": "arm64",
+        "zhName": "喜马拉雅",
+        "description":"ximalaya"
+    },
+    "xuexiqiangguo_2.13.apk": {
+        "androidName": "cn.xuexi.android",
+        "appDesktop": "cn.xuexi.android.desktop",
+        "appIcon": "cn.xuexi.android.png",
+        "debName": "cn.xuexi.android",
+        "debVersion": "2.13.2",
+        "platform": "arm64",
+        "zhName": "学习强国",
+        "description":"xuexiqiangguo"
+    },
+    "youdao_v8.0.1.apk": {
+        "androidName": "com.youdao.dict",
+        "appDesktop": "com.youdao.dict.desktop",
+        "appIcon": "com.youdao.dict.png",
+        "debName": "com.youdao.dict",
+        "debVersion": "8.0.1",
+        "platform": "arm64",
+        "zhName": "网易有道词典",
+        "description":"youdao"
+    },
+    "zhihu_6.48.0_2112.apk": {
+        "androidName": "com.zhihu.android",
+        "appDesktop": "com.zhihu.android.desktop",
+        "appIcon": "com.zhihu.android.png",
+        "debName": "com.zhihu.android",
+        "debVersion": "6.48.0.2112",
+        "platform": "arm64",
+        "zhName": "知乎",
+        "description":"zhihu"
+    }
+}

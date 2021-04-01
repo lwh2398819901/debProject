@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=今日头条
+Exec=/home/Kbox/slink/com.ss.android.article.news launcher launcherapp -n "com.ss.android.article.news" -c "com.ss.android.article.news.activity.MainActivity" -t "今日头条" -i "/home/Kbox/icons/com.ss.android.article.news.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.ss.android.article.news.png
+Comment=今日头条

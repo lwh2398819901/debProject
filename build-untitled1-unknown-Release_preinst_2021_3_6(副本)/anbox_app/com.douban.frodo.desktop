@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=豆瓣
+Exec=/home/Kbox/slink/com.douban.frodo launcher launcherapp -n "com.douban.frodo" -c "com.douban.frodo.activity.SplashActivity" -t "豆瓣" -i "/home/Kbox/icons/com.douban.frodo.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.douban.frodo.png
+Comment=豆瓣
