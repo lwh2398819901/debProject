@@ -15,6 +15,7 @@ struct ApkInfo
     QString androidName;
     QString zhName;
     QString description;
+    bool isOld{false};
 
     ApkInfo() = default;
     ApkInfo(const ApkInfo &apk){
@@ -27,6 +28,7 @@ struct ApkInfo
         androidName=apk.androidName;
         zhName     =apk.zhName;
         description=apk.description;
+        isOld      =apk.isOld;
     }
 
     bool operator!=(const ApkInfo &apk)const{
