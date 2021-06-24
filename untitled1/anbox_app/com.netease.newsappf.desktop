@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=网易新闻HD
+Exec=/home/Kbox/slink/com.netease.newsappf launcher launcherapp -n "com.netease.newsappf" -c "com.netease.newsappf.MainActivity" -t "网易新闻HD" -i "/home/Kbox/icons/com.netease.newsappf.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.netease.newsappf.png
+Comment=网易新闻HD

@@ -31,10 +31,11 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(m_proces_bash,SIGNAL(readyReadStandardOutput()),this,SLOT(readBashStandardOutputInfo()));
     connect(m_proces_bash,SIGNAL(readyReadStandardError()),this,SLOT(readBashStandardErrorInfo()));
     //获取模板文件内容
-    model_control = readFile("./model/control");
-    model_postinst = readFile("./model/postinst");
-    model_prerm = readFile("./model/prerm");
-    model_info = readFile("./model/info");
+    foreach(QString fileName,publisherFunc::getDirFileNames("./model")){
+        debianPath.insert(pair<QString,QString>(fileName,readFile(QString("./model/%1").arg(fileName))));
+    }
+
+    model_info = readFile("./model/other/info");
 
     //信按钮号连接
     connect(ui->loadDirBtn,&QPushButton::clicked,this,&MainWindow::slot_loadAPKDir);
@@ -73,8 +74,6 @@ void MainWindow::slot_appDir(){
     getDirPath(ui->apkDirLine);
 }
 
-
-
 //创建deb及文件
 void MainWindow::slot_createDirAndDeb(){
     m_loadDir = ui->loadLine->text();
@@ -103,14 +102,10 @@ void MainWindow::slot_createDirAndDeb(){
             QString DebianDir=appDir+"/DEBIAN/";
             dir.mkpath(DebianDir); //递归创建目录结构，appdir目录通过递归创建出来
 
-            //创建control postinst prer
-            createFile(DebianDir+"control",replaceString(model_control,apk));
-            createFile(DebianDir+"postinst",replaceString(model_postinst,apk));
-            createFile(DebianDir+"prerm",replaceString(model_prerm,apk));
-            //更改权限0755
-            chmod((DebianDir+"control").toLocal8Bit().data(),0755);
-            chmod((DebianDir+"postinst").toLocal8Bit().data(),0755);
-            chmod((DebianDir+"prerm").toLocal8Bit().data(),0755);
+            for(auto it = debianPath.begin();it!=debianPath.end();++it){
+                createFile(DebianDir+it->first,replaceString(it->second,apk)); //创建debian目录下文件
+                chmod((DebianDir+it->first).toLocal8Bit().data(),0755);     //更改权限0755
+            }
 
             //创建icon文件
             QString optDir=appDir+m_apkDir+"/";
@@ -131,10 +126,11 @@ void MainWindow::slot_createDirAndDeb(){
             QString desktopDir=optDir+apk.debName+"/entries/applications/";
             dir.mkpath(desktopDir);
             QFile::copy("./anbox_app/"+apk.appDesktop,desktopDir+apk.appDesktop);
+            //qDebug()<<"./anbox_app/"+apk.appDesktop<<desktopDir+apk.appDesktop;
             //创建info文件
             createFile(optDir+apk.debName+"/info",replaceString(model_info,apk));
 
-            //修改icon文件
+            //修改icon字段
             if(iconFlag)
                 iconChanged(apk,desktopDir+apk.appDesktop);
             //创建deb
@@ -178,20 +174,24 @@ void MainWindow::iconChanged(const ApkInfo &apk, const QString filePath){
     QStringList list =readFile(filePath).split("\n");
     QString exec = ui->execLine->text();
     QString text;
-    qDebug()<<"===================="<<list;
     foreach(const QString &str, list){
-        if(str.startsWith("Icon="))
+        if(str.startsWith("Icon=")) {
             text += "Icon="+m_iconDir+apk.debName+".png\n";
-//        else if(str.startsWith("Exec="))
-//            text +="Exec="+exec+" "+apk.debName+" "+apk.debVersion+"\n";
-        else
+        }
+        else if(str.startsWith("Exec=")) {
+            QString str2 = str.mid(5).replace("\"","\'");
+           //qDebug()<<str2;
+            text +="Exec="+exec+" "+apk.debName+"  \""+str2+"\""+"  Kbox_2_0\n";
+        }
+        else {
             text += (str+"\n");
+        }
     }
     createFile(filePath,text);
 }
 //创建deb
 void MainWindow::createDeb(QString debPath, QString debName){
-    QString str =QString("dpkg  -b  %1  %2\n").arg(debPath).arg(debName);
+    QString str =QString("dpkg-deb --root-owner-group  -b  %1  %2\n").arg(debPath).arg(debName);
     m_proces_bash->write(str.toLocal8Bit());
 }
 /********************************apkinfo属性相关*************************************/
@@ -222,7 +222,6 @@ void MainWindow::readAppPackageNames(){
             apk.zhName=obj.value("zhName").toString();
             apk.description=obj.value("description").toString();
             m_apppAckageNames.insert(key,apk);
-            qDebug()<<apk.zhName<<apk.debVersion;
         }
     }
 }
@@ -304,7 +303,7 @@ void MainWindow::readConfig(){
     ui->apkDirLine->setText(configIni.value( "settings/apkDirLine").toString());
     ui->checkBox->setChecked(configIni.value("mainWindwos/debCheckBox").toBool());
     ui->iconCheckBox->setChecked(configIni.value("settings/iconCheckBox").toBool());
-     ui->execLine->setText(configIni.value( "settings/execline").toString());
+    ui->execLine->setText(configIni.value( "settings/execline").toString());
 }
 
 void MainWindow::writeConfig(){
@@ -315,7 +314,7 @@ void MainWindow::writeConfig(){
     configIni.setValue( "settings/desktoLine" ,ui->desktoLine->text());
     configIni.setValue( "settings/apkDirLine" ,ui->apkDirLine->text());
     configIni.setValue( "settings/iconCheckBox" ,ui->iconCheckBox->checkState()==Qt::CheckState::Checked);
-     configIni.setValue( "settings/execline" ,ui->execLine->text());
+    configIni.setValue( "settings/execline" ,ui->execLine->text());
 }
 
 

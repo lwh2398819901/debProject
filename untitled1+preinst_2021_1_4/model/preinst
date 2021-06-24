@@ -1,3 +1,0 @@
-#! /bin/bash
-Res=`bash /opt/KboxAppLauncher/bin/kboxAppPreinst.sh`
-exit $Res;

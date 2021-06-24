@@ -44,7 +44,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::onStart()
 {
-
     QString path = ui->pathLine->text();
     if (path.isEmpty()) {
         showTextBox("路径为空，请选择路径");
@@ -55,7 +54,7 @@ void MainWindow::onStart()
     dir.remove(curPath + "/desktopTmp");
     dir.mkpath(curPath + "/desktopTmp/icons");
 
-    auto func = [=](bool flag ){
+    auto chBtnStatus = [=](bool flag ){
         ui->startBtn->setEnabled(!flag);
         ui->selectPathBtn->setEnabled(!flag);
         ui->scmdCbox->setEnabled(!flag);
@@ -66,7 +65,7 @@ void MainWindow::onStart()
         ui->stopBtn->setEnabled(flag);
     };
 
-    func(true);
+    chBtnStatus(true);
 
     ui->outText->clear();
     ui->listWidget->clear();
@@ -84,6 +83,7 @@ void MainWindow::onStart()
         list << path;
     }
     qDebug() << list;
+    kbox_init = getApkList();
     foreach (QString apkFile, list) {
         if(isStop)
             break;
@@ -100,7 +100,7 @@ void MainWindow::onStart()
             countRowlabel.setText(QString("总 %1 行").arg(countRow));
         }
     }
-    func(false);
+    chBtnStatus(false);
 
     createJson(curPath+"/desktopTmp/android_app.json");
 }
@@ -278,7 +278,7 @@ void MainWindow::installApk(QString filePath)
     //安装apk
     QPair<int, QString> res2 = threadCallDbus(install);
     ui->outText->append(res2.second);
-    pause(10000);
+    pause(100);
 }
 
 QString MainWindow::ApkDescription(QString title)
@@ -332,7 +332,7 @@ QString MainWindow::ApkDescription(QString title)
 
 bool MainWindow::setApkInfo(ApkInfo &apk,QString filePath)
 {
-    QSet<QString> beforeInstall = getApkList();
+    QSet<QString> beforeInstall = kbox_init;
     installApk(filePath);
     QSet<QString> afterInstall = getApkList();
     int num = 0;

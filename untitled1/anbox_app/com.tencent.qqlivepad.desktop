@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=腾讯视频 HD
+Exec=/home/Kbox/slink/com.tencent.qqlivepad launcher launcherapp -n "com.tencent.qqlivepad" -c "com.tencent.qqlive.ona.activity.WelcomeActivity" -t "腾讯视频 HD" -i "/home/Kbox/icons/com.tencent.qqlivepad.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.tencent.qqlivepad.png
+Comment=腾讯视频 HD

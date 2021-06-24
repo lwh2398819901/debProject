@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=网易新闻
-Exec=/home/Kbox/slink/com.netease.newsreader.activity launcher launcherapp -n "com.netease.newsreader.activity" -c "com.netease.nr.biz.ad.newAd.AdActivity" -t "网易新闻" -i "/home/Kbox/icons/com.netease.newsreader.activity.png"
-Terminal=false
-Type=Application
-Icon=/home/Kbox/icons/com.netease.newsreader.activity.png
-Comment=网易新闻

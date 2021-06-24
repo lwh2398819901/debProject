@@ -1,4 +1,0 @@
-#! /bin/bash
-KboxAndroidApp.sh  appCheck #debName# #debVersion#
-exit $?;
-

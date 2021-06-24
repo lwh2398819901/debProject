@@ -1,6 +1,7 @@
 [Desktop Entry]
-Name=抖音短视频
+Name=抖音
+Exec=/home/Kbox/slink/com.ss.android.ugc.aweme launcher launcherapp -n "com.ss.android.ugc.aweme" -c "com.ss.android.ugc.aweme.splash.SplashActivity" -t "抖音" -i "/home/Kbox/icons/com.ss.android.ugc.aweme.png"
 Terminal=false
 Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-ss-android-ugc-aweme.png
-Exec=KboxAppLauncher com.ss.android.ugc.aweme "/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.ss.android.ugc.aweme --component=com.ss.android.ugc.aweme.splash.SplashActivity"
+Icon=/home/Kbox/icons/com.ss.android.ugc.aweme.png
+Comment=抖音

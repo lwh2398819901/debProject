@@ -6,6 +6,9 @@
 #include <QProcess>
 #include "apkinfo.h"
 #include "publisherfunc.h"
+#include <map>
+
+using namespace std;
 
 namespace Ui {
 class MainWindow;
@@ -56,10 +59,11 @@ private:
     QProcess* m_proces_bash {nullptr};
     QMap<QString,ApkInfo>m_apppAckageNames;
 
-    QString model_control;
-    QString model_postinst;
-    QString model_prerm;
+
     QString model_info;
+    map<QString,QString>debianPath;
+
+
 
     bool isAddApk;
 

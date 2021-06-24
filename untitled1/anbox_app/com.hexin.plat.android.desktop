@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=同花顺
+Exec=/home/Kbox/slink/com.hexin.plat.android launcher launcherapp -n "com.hexin.plat.android" -c "com.hexin.plat.android.AndroidLogoActivity" -t "同花顺" -i "/home/Kbox/icons/com.hexin.plat.android.png"
 Terminal=false
 Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-hexin-plat-android.png
-Exec=KboxAppLauncher com.hexin.plat.android "/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.hexin.plat.android --component=com.hexin.plat.android.AndroidLogoActivity"
+Icon=/home/Kbox/icons/com.hexin.plat.android.png
+Comment=同花顺

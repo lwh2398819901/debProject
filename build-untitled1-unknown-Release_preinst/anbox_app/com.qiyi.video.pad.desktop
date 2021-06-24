@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=爱奇艺HD
-Terminal=false
-Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-qiyi-video-pad.png
-Exec=KboxAppLauncher com.qiyi.video.pad "/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.qiyi.video.pad --component=org.qiyi.android.video.MainActivity"

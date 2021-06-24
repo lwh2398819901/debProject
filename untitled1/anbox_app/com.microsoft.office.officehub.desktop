@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Microsoft Office
+Exec=/home/Kbox/slink/com.microsoft.office.officehub launcher launcherapp -n "com.microsoft.office.officehub" -c "com.microsoft.office.officesuite.OfficeSuiteActivity" -t "Microsoft Office" -i "/home/Kbox/icons/com.microsoft.office.officehub.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.microsoft.office.officehub.png
+Comment=Microsoft Office

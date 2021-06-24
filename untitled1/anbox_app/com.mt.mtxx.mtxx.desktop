@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=美图秀秀
+Exec=/home/Kbox/slink/com.mt.mtxx.mtxx launcher launcherapp -n "com.mt.mtxx.mtxx" -c "com.mt.mtxx.mtxx.TopViewActivity" -t "美图秀秀" -i "/home/Kbox/icons/com.mt.mtxx.mtxx.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.mt.mtxx.mtxx.png
+Comment=美图秀秀

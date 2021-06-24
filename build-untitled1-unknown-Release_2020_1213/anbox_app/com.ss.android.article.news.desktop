@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=今日头条
-Terminal=false
-Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-ss-android-article-news.png
-Exec=KboxAppLauncher com.ss.android.article.news "/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.ss.android.article.news --component=com.ss.android.article.news.activity.MainActivity"

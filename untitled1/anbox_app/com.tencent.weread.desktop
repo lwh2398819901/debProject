@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=微信读书
+Exec=/home/Kbox/slink/com.tencent.weread launcher launcherapp -n "com.tencent.weread" -c "com.tencent.weread.LauncherActivity" -t "微信读书" -i "/home/Kbox/icons/com.tencent.weread.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.tencent.weread.png
+Comment=微信读书

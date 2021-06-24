@@ -1,7 +1,0 @@
-[Desktop Entry]
-Exec=/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.sankuai.meituan --component=com.meituan.android.pt.homepage.activity.MainActivity
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-sankuai-meituan.png
-Name=美团
-Terminal=false
-Type=Application
-X-Deepin-Vendor=user-custom

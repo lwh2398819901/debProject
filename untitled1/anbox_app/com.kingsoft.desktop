@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=金山词霸
+Exec=/home/Kbox/slink/com.kingsoft launcher launcherapp -n "com.kingsoft" -c "com.kingsoft.NewStartActivity" -t "金山词霸" -i "/home/Kbox/icons/com.kingsoft.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.kingsoft.png
+Comment=金山词霸

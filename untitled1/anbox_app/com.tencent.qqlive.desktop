@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=腾讯视频
-Exec=/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.tencent.qqlive --component=com.tencent.qqlive.ona.activity.SplashHomeActivity 
+Exec=/home/Kbox/slink/com.tencent.qqlive launcher launcherapp -n "com.tencent.qqlive" -c "com.tencent.qqlive.ona.activity.SplashHomeActivity" -t "腾讯视频" -i "/home/Kbox/icons/com.tencent.qqlive.png"
 Terminal=false
 Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-tencent-qqlive.png
+Icon=/home/Kbox/icons/com.tencent.qqlive.png
+Comment=腾讯视频

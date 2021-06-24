@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=微博
+Exec=/home/Kbox/slink/com.sina.weibo launcher launcherapp -n "com.sina.weibo" -c "com.sina.weibo.SplashActivity" -t "微博" -i "/home/Kbox/icons/com.sina.weibo.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.sina.weibo.png
+Comment=微博

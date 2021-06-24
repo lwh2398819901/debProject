@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=网易新闻
-Exec=/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.netease.newsreader.activity --component=com.netease.nr.biz.ad.newAd.AdActivity 
-Terminal=false
-Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-netease-newsreader-activity.png

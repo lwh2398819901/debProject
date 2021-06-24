@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=企业微信
-Exec=/home/Kbox/slink/com.tencent.wework launcher launcherapp -n "com.tencent.wework" -c "com.tencent.wework.launch.LaunchSplashActivity" -t "企业微信" -i "/home/Kbox/icons/com.tencent.wework.png"
-Terminal=false
-Type=Application
-Icon=/home/Kbox/icons/com.tencent.wework.png
-Comment=企业微信

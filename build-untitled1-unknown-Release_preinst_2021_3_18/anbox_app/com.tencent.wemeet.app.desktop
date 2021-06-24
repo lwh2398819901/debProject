@@ -1,8 +1,0 @@
-[Desktop Entry]
-Comment=腾讯会议
-Exec=/home/Kbox/slink/com.tencent.wemeet.app launcher launcherapp -n "com.tencent.wemeet.app" -c "com.tencent.wemeet.app.StartupActivity" -t "腾讯会议" -i "/home/Kbox/icons/com.tencent.wemeet.app.png"
-Icon=/home/Kbox/icons/com.tencent.wemeet.app.png
-Name=腾讯会议
-Terminal=false
-Type=Application
-X-Deepin-Vendor=user-custom

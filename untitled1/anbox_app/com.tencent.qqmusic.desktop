@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=QQ音乐
-Exec=/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.tencent.qqmusic --component=com.tencent.qqmusic.activity.AppStarterActivity 
+Exec=/home/Kbox/slink/com.tencent.qqmusic launcher launcherapp -n "com.tencent.qqmusic" -c "com.tencent.qqmusic.activity.AppStarterActivity" -t "QQ音乐" -i "/home/Kbox/icons/com.tencent.qqmusic.png"
 Terminal=false
 Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-tencent-qqmusic.png
+Icon=/home/Kbox/icons/com.tencent.qqmusic.png
+Comment=QQ音乐

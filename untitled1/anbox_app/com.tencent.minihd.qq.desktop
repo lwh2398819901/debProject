@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=QQ HD
+Exec=/home/Kbox/slink/com.tencent.minihd.qq launcher launcherapp -n "com.tencent.minihd.qq" -c "com.tencent.mobileqq.activity.SplashActivity" -t "QQ HD" -i "/home/Kbox/icons/com.tencent.minihd.qq.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.tencent.minihd.qq.png
+Comment=QQ HD

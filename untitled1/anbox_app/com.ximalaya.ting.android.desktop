@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=喜马拉雅
-Exec=/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.ximalaya.ting.android --component=com.ximalaya.ting.android.host.activity.WelComeActivity 
+Exec=/home/Kbox/slink/com.ximalaya.ting.android launcher launcherapp -n "com.ximalaya.ting.android" -c "com.ximalaya.ting.android.host.activity.WelComeActivity" -t "喜马拉雅" -i "/home/Kbox/icons/com.ximalaya.ting.android.png"
 Terminal=false
 Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-ximalaya-ting-android.png
+Icon=/home/Kbox/icons/com.ximalaya.ting.android.png
+Comment=喜马拉雅

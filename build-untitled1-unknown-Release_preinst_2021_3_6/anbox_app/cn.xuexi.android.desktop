@@ -1,8 +1,0 @@
-[Desktop Entry]
-Comment=学习强国
-Exec=/home/Kbox/slink/cn.xuexi.android launcher launcherapp -n "cn.xuexi.android" -c "com.alibaba.android.rimet.biz.SplashActivity" -t "学习强国" -i "/home/Kbox/icons/cn.xuexi.android.png"
-Icon=/home/Kbox/icons/cn.xuexi.android.png
-Name=学习强国
-Terminal=false
-Type=Application
-X-Deepin-Vendor=user-custom

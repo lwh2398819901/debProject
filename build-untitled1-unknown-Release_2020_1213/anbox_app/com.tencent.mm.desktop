@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=微信
-Terminal=false
-Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-tencent-mm.png
-Exec=KboxAppLauncher com.tencent.mm "/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.tencent.mm --component=com.tencent.mm.ui.LauncherUI"

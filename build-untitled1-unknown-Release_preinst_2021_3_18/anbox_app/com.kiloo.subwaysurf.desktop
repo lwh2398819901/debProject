@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=地铁跑酷
-Exec=/home/Kbox/slink/com.kiloo.subwaysurf launcher launcherapp -n "com.kiloo.subwaysurf" -c "com.kiloo.subwaysurf.GameStartActivity" -t "地铁跑酷" -i "/home/Kbox/icons/com.kiloo.subwaysurf.png"
-Terminal=false
-Type=Application
-Icon=/home/Kbox/icons/com.kiloo.subwaysurf.png
-Comment=地铁跑酷

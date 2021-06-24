@@ -1,3 +1,0 @@
-#! /bin/bash
-KboxAndroidApp.sh  appUninstall #debName# #debVersion#
-exit 0;

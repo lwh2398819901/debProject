@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=手机淘宝
-Exec=/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.taobao.taobao --component=com.taobao.tao.welcome.Welcome 
+Exec=/home/Kbox/slink/com.taobao.taobao launcher launcherapp -n "com.taobao.taobao" -c "com.taobao.tao.welcome.Welcome" -t "手机淘宝" -i "/home/Kbox/icons/com.taobao.taobao.png"
 Terminal=false
 Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-taobao-taobao.png
+Icon=/home/Kbox/icons/com.taobao.taobao.png
+Comment=手机淘宝

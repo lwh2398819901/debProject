@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=爱奇艺HD
-Exec=/home/Kbox/slink/com.qiyi.video.pad launcher launcherapp -n "com.qiyi.video.pad" -c "org.qiyi.android.video.MainActivity" -t "爱奇艺HD" -i "/home/Kbox/icons/com.qiyi.video.pad.png"
-Terminal=false
-Type=Application
-Icon=/home/Kbox/icons/com.qiyi.video.pad.png
-Comment=爱奇艺HD

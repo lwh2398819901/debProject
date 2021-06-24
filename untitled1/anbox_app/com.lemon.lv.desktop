@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=剪映
+Exec=/home/Kbox/slink/com.lemon.lv launcher launcherapp -n "com.lemon.lv" -c "com.vega.launcher.precondition.PreInstallConfirmActivity" -t "剪映" -i "/home/Kbox/icons/com.lemon.lv.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.lemon.lv.png
+Comment=剪映

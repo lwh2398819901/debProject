@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=QQ邮箱
+Exec=/home/Kbox/slink/com.tencent.androidqqmail launcher launcherapp -n "com.tencent.androidqqmail" -c "com.tencent.qqmail.launcher.desktop.LauncherActivity" -t "QQ邮箱" -i "/home/Kbox/icons/com.tencent.androidqqmail.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.tencent.androidqqmail.png
+Comment=QQ邮箱

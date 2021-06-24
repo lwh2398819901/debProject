@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=网易邮箱大师
+Exec=/home/Kbox/slink/com.netease.mail launcher launcherapp -n "com.netease.mail" -c "com.netease.mobimail.activity.LaunchActivity" -t "网易邮箱大师" -i "/home/Kbox/icons/com.netease.mail.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.netease.mail.png
+Comment=网易邮箱大师

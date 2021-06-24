@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=微信
-Exec=/home/Kbox/slink/com.tencent.mm launcher launcherapp -n "com.tencent.mm" -c "com.tencent.mm.ui.LauncherUI" -t "微信" -i "/home/Kbox/icons/com.tencent.mm.png"
-Terminal=false
-Type=Application
-Icon=/home/Kbox/icons/com.tencent.mm.png
-Comment=微信

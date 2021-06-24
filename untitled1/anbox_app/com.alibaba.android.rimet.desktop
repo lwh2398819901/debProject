@@ -1,7 +1,7 @@
 [Desktop Entry]
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-alibaba-android-rimet.png
 Name=钉钉
+Exec=/home/Kbox/slink/com.alibaba.android.rimet launcher launcherapp -n "com.alibaba.android.rimet" -c "com.alibaba.android.rimet.biz.LaunchHomeActivity" -t "钉钉" -i "/home/Kbox/icons/com.alibaba.android.rimet.png"
 Terminal=false
 Type=Application
-X-Deepin-Vendor=user-custom
-Exec=KboxAppLauncher com.alibaba.android.rimet  "/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.alibaba.android.rimet --component=com.alibaba.android.rimet.biz.LaunchHomeActivity"
+Icon=/home/Kbox/icons/com.alibaba.android.rimet.png
+Comment=钉钉

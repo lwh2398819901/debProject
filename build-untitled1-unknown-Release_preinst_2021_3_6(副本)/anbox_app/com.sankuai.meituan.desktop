@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=美团
-Exec=/home/Kbox/slink/com.sankuai.meituan launcher launcherapp -n "com.sankuai.meituan" -c "com.meituan.android.pt.homepage.activity.MainActivity" -t "美团" -i "/home/Kbox/icons/com.sankuai.meituan.png"
-Terminal=false
-Type=Application
-Icon=/home/Kbox/icons/com.sankuai.meituan.png
-Comment=美团

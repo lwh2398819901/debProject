@@ -48,6 +48,10 @@ private:
 
     QLabel curRowlabel;
     QLabel countRowlabel;
+
+    QSet<QString>kbox_init;
+
+
 };
 
 #endif // MAINWINDOW_H

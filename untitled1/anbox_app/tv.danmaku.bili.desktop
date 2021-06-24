@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=哔哩哔哩
+Exec=/home/Kbox/slink/tv.danmaku.bili launcher launcherapp -n "tv.danmaku.bili" -c "tv.danmaku.bili.ui.splash.SplashActivity" -t "哔哩哔哩" -i "/home/Kbox/icons/tv.danmaku.bili.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/tv.danmaku.bili.png
+Comment=哔哩哔哩

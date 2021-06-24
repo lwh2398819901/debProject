@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=知乎
-Exec=/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.zhihu.android --component=com.zhihu.android.app.ui.activity.LauncherActivity 
+Exec=/home/Kbox/slink/com.zhihu.android launcher launcherapp -n "com.zhihu.android" -c "com.zhihu.android.app.ui.activity.LauncherActivity" -t "知乎" -i "/home/Kbox/icons/com.zhihu.android.png"
 Terminal=false
 Type=Application
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-zhihu-android.png
+Icon=/home/Kbox/icons/com.zhihu.android.png
+Comment=知乎

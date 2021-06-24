@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=政务微信
+Exec=/home/Kbox/slink/com.tencent.weworklocal launcher launcherapp -n "com.tencent.weworklocal" -c "com.tencent.wework.launch.WwMainActivity" -t "政务微信" -i "/home/Kbox/icons/com.tencent.weworklocal.png"
+Terminal=false
+Type=Application
+Icon=/home/Kbox/icons/com.tencent.weworklocal.png
+Comment=政务微信

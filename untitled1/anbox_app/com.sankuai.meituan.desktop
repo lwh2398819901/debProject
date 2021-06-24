@@ -1,7 +1,7 @@
 [Desktop Entry]
-Exec=/usr/bin/anbox-launch.sh --action=android.intent.action.MAIN --package=com.sankuai.meituan --component=com.meituan.android.pt.homepage.activity.MainActivity
-Icon=/home/uos/.local/share/applications/anbox/anbox-com-sankuai-meituan.png
 Name=美团
+Exec=/home/Kbox/slink/com.sankuai.meituan launcher launcherapp -n "com.sankuai.meituan" -c "com.meituan.android.pt.homepage.activity.MainActivity" -t "美团" -i "/home/Kbox/icons/com.sankuai.meituan.png"
 Terminal=false
 Type=Application
-X-Deepin-Vendor=user-custom
+Icon=/home/Kbox/icons/com.sankuai.meituan.png
+Comment=美团
